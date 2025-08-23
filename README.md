@@ -29,11 +29,21 @@ Easily generate ready-to-print event badges for DevFest 2025!
 - Badge layout (positions, font sizes, alignment) is controlled via `public/files/badgeConfig.json`.
 - You can manually adjust this file for perfect results.
 
+## Contributors
+
+### 2025
+- [Ewuji John](https://github.com/JbravoI)
+- David Oluwabusayo (GDG Ado-Ekiti Lead)
+
 ## Contributing
 Pull requests and suggestions are welcome! See the [GitHub repo](https://github.com/olorunfemidavis/DevFestBadge).
 
 ## License
 Open source under the MIT License.
+
+## Try It Live
+
+👉 [DevFest Badge Generator](https://devfestbadge.web.app)
 
 ---
 With ❤ by [GDG Ado-Ekiti](https://gdg.community.dev/gdg-ado-ekiti) 🇳🇬
