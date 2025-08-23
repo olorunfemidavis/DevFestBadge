@@ -21,24 +21,27 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  /* Remove overflow: hidden to allow scrolling */
 }
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  /* Remove overflow: hidden from #app-container as well */
 }
 #app-container {
-  height: calc(100vh - 2.5rem); /* Reserve space for footer toggle */
-  max-height: calc(100vh - 2.5rem);
-  overflow: hidden;
+  min-height: 100vh;
+  max-height: none;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+  padding-bottom: 5.5rem; /* Reserve space for footer on all screens */
 }
 body {
   margin: 0;
@@ -107,8 +110,8 @@ header p {
 }
 #actions-section {
   text-align: center;
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 2.5rem; /* Add extra space at the bottom for footer toggle */
   padding-bottom: 0.1rem;
 }
 #download-btn {
@@ -145,13 +148,15 @@ header p {
   color: var(--primary-text);
 }
 .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100vw;
   background: var(--card-bg);
   color: var(--primary-text);
   border-top: 1px solid #e0e0e0;
-  padding: 0.7rem 0 0.3rem 0;
-  margin-top: auto;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  z-index: 100;
 }
 .footer-toggle {
   width: 100vw;
@@ -220,6 +225,17 @@ header p {
     font-size: 1.2rem;
   }
 }
+@media (max-width: 1024px) {
+  #app-container {
+    padding-bottom: 7rem;
+  }
+  #actions-section {
+    margin-bottom: 3.5rem; /* More space for small screens */
+  }
+  .footer-content {
+    max-height: 50vh;
+  }
+}
 /* Font family mappings for badge rendering */
 .badge-font-google-sans {
   font-family: 'Google Sans', Arial, sans-serif;
@@ -243,6 +259,8 @@ header p {
   align-items: center;
   gap: 0.1rem;
   padding: 0.2rem 0 0.1rem 0;
+  max-height: 40vh;
+  overflow-y: auto;
 }
 .footer-main {
   width: 100%;
