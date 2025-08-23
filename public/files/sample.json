@@ -1,0 +1,34 @@
+[
+  {
+    "location": "GDG Ado-Ekiti",
+    "firstname": "John",
+    "lastname": "Doe",
+    "title": "Developer",
+    "organization": "Google",
+    "participationType": "Attendee"
+  },
+  {
+    "location": "GDG Lagos",
+    "firstname": "Jane",
+    "lastname": "Smith",
+    "title": "Speaker",
+    "organization": "GDG",
+    "participationType": "Speaker"
+  },
+  {
+    "location": "GDG Ibadan",
+    "firstname": "Alex",
+    "lastname": "Brown",
+    "title": "Organizer",
+    "organization": "GDG",
+    "participationType": "General"
+  },
+  {
+    "location": "GDG Abuja",
+    "firstname": "Mary",
+    "lastname": "Johnson",
+    "title": "Staff",
+    "organization": "Google",
+    "participationType": "Staff"
+  }
+]
