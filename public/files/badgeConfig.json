@@ -1,7 +1,7 @@
 {
-  "location": { "x": 220.64, "y": 350.84, "w": 770, "h": 49.5, "fontsize": 46.5, "fontfamily": "Google Sans", "align": "center" },
-  "firstname": { "x": 122.64, "y": 902.58, "w": 887.94, "h": 103.02, "fontsize": 77.5, "fontfamily": "Google Sans Medium", "align": "left" },
-  "lastname": { "x": 122.64, "y": 1025.74, "w": 887.94, "h": 99, "fontsize": 77.5, "fontfamily": "Google Sans Medium", "align": "left" },
-  "title": { "x": 122.64, "y": 1177.23, "w": 887.94, "h": 63, "fontsize": 54, "fontfamily": "Google Sans Mono Medium", "align": "left" },
-  "organization": { "x": 122.64, "y": 1276.98, "w": 887.94, "h": 79.5, "fontsize": 54, "fontfamily": "Google Sans Mono Medium", "align": "left" }
+  "location": { "x": 220.64, "y": 326.09, "w": 770, "h": 49.5, "fontsize": 46.5, "fontfamily": "Google Sans", "align": "center" },
+  "firstname": { "x": 122.64, "y": 851.07, "w": 887.94, "h": 103.02, "fontsize": 77.5, "fontfamily": "Google Sans Medium", "align": "left" },
+  "lastname": { "x": 122.64, "y": 976.24, "w": 887.94, "h": 99, "fontsize": 77.5, "fontfamily": "Google Sans Medium", "align": "left" },
+  "title": { "x": 122.64, "y": 1145.73, "w": 887.94, "h": 63, "fontsize": 54, "fontfamily": "Google Sans Mono Medium", "align": "left" },
+  "organization": { "x": 122.64, "y": 1237.23, "w": 887.94, "h": 79.5, "fontsize": 54, "fontfamily": "Google Sans Mono Medium", "align": "left" }
 }

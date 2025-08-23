@@ -85,6 +85,7 @@ function renderBadgePreview(attendee) {
         const conf = badgeConfig[key];
         ctx.font = `${conf.fontsize}px ${conf.fontfamily}`;
         ctx.textAlign = conf.align;
+        ctx.textBaseline = 'middle'; // Vertically center text
         ctx.fillStyle = '#222';
         // For left alignment, use x as is; for center, x + w/2
         let xPos = conf.x;
@@ -115,13 +116,44 @@ downloadBtn.addEventListener('click', async () => {
     return;
   }
   const zip = new JSZip();
+  // Create a hidden canvas for rendering each badge
+  const tempCanvas = document.createElement('canvas');
+  tempCanvas.width = badgePreview.width;
+  tempCanvas.height = badgePreview.height;
+  const tempCtx = tempCanvas.getContext('2d');
   for (let i = 0; i < attendeeList.length; i++) {
     const attendee = attendeeList[i];
-    // Render badge to canvas
-    renderBadgePreview(attendee);
-    // Get image data
-    const dataUrl = badgePreview.toDataURL('image/png');
-    zip.file(`badge_${i+1}_${attendee.firstname}_${attendee.lastname}.png`, dataUrl.split(',')[1], {base64: true});
+    let type = (attendee && attendee.participationType) ? attendee.participationType.toLowerCase() : 'general';
+    let imgSrc = `images/badge/${type}.png`;
+    // Render badge for each attendee
+    await new Promise((resolve) => {
+      const img = new Image();
+      img.onload = function() {
+        tempCtx.clearRect(0, 0, tempCanvas.width, tempCanvas.height);
+        tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
+        Object.keys(badgeConfig).forEach(key => {
+          const conf = badgeConfig[key];
+          tempCtx.font = `${conf.fontsize}px ${conf.fontfamily}`;
+          tempCtx.textAlign = conf.align;
+          tempCtx.textBaseline = 'middle';
+          tempCtx.fillStyle = '#222';
+          let xPos = conf.x;
+          if (conf.align === 'center') xPos = conf.x + conf.w/2;
+          tempCtx.fillText(attendee[key] || '', xPos, conf.y + conf.h/2);
+        });
+        const dataUrl = tempCanvas.toDataURL('image/png');
+        zip.file(`badge_${i+1}_${attendee.firstname}_${attendee.lastname}.png`, dataUrl.split(',')[1], {base64: true});
+        resolve();
+      };
+      img.onerror = function() {
+        if (imgSrc !== 'images/badge/badge.png') {
+          img.src = 'images/badge/badge.png';
+        } else {
+          resolve();
+        }
+      };
+      img.src = imgSrc;
+    });
   }
   const content = await zip.generateAsync({type: 'blob'});
   const a = document.createElement('a');
