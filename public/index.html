@@ -53,27 +53,33 @@
     </div>
     <footer class="footer themed-footer">
       <button id="footer-toggle" class="footer-toggle">Instructions</button>
-      <div id="footer-content" class="grid-vertical-container" style="display:none;">
-        <div class="dudu center_text">
-          With <span style="color: red">❤</span> by
-          <a style="color: #2b83fc" href="https://gdg.community.dev/gdg-ado-ekiti">GDG Ado-Ekiti</a>
-          🇳🇬 |
-          <a target="_blank" style="color: #2b83fc"
-            href="https://sites.google.com/view/devfestavatarcreatorprivacy/home">Privacy</a>
+      <div id="footer-content" class="footer-content" style="display:none;">
+        <div class="footer-main">
+          <div class="footer-row">
+            <span class="footer-heart">With <span style="color: red">❤</span> by</span>
+            <a class="footer-link" href="https://gdg.community.dev/gdg-ado-ekiti">GDG Ado-Ekiti</a>
+            <span class="footer-flag">🇳🇬</span>
+            <span class="footer-sep">|</span>
+            <a class="footer-link" target="_blank" href="https://sites.google.com/view/devfestavatarcreatorprivacy/home">Privacy</a>
+          </div>
+          <div class="footer-row">
+            <span id="year"></span> Stat:
+            <b><span id="countSpan"></span></b> badges.
+          </div>
+          <div class="footer-row">
+            <a href="https://github.com/olorunfemidavis/DevFestBadge" target="_blank">
+              <img src="./images/open_source.png" alt="Open source" class="open-source-logo" />
+            </a>
+          </div>
+          <div class="footer-row" style="margin-top:0.1rem;">
+            <section id="sample-section" style="text-align:center; margin:0; padding:0;">
+              <h3 style="margin:0.1rem 0 0.1rem 0;">Download Sample Files</h3>
+              <a href="files/sample.json" download class="sample-link">Sample JSON</a>
+              <a href="files/sample.csv" download class="sample-link">Sample CSV</a>
+              <a href="files/sample.xlsx" download class="sample-link">Sample XLSX</a>
+            </section>
+          </div>
         </div>
-        <div class="center_text dudu" style="line-height: 0px; margin: 5px">
-          <span id="year"></span> Stat:
-          <b><span id="countSpan"></span></b> badges.
-        </div>
-        <a href="https://github.com/olorunfemidavis/DevFestBadge" target="_blank">
-          <img src="./images/open_source.png" alt="Open source" class="open-source-logo" />
-        </a>
-        <section id="sample-section" style="text-align:center; margin:0.2rem 0;">
-          <h4>Download Sample Files</h4>
-          <a href="files/sample.json" download class="sample-link">Sample JSON</a> |
-          <a href="files/sample.csv" download class="sample-link">Sample CSV</a> |
-          <a href="files/sample.xlsx" download class="sample-link">Sample XLSX</a>
-        </section>
       </div>
     </footer>
     <script src="js/site.js"></script>
