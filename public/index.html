@@ -1,89 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.1.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.1.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.1.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.1.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.1.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.1.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.1.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.1.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.1.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.1.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>#DevFest Badge Creator</title>
+    <meta name="description" content="Create your #DevFest Badge for #DevFest2025. Join the global conversation on responsible AI!" />
+    <link rel="canonical" href="https://devfestbadge.web.app/" />
+    <link rel="shortcut icon" href="https://devfestbadge.web.app/images/icon/logo.png" />
+    <meta name="theme-color" content="#23457C" />
+    <meta name="date" content="2025-08-22" />
+    <meta name="author" content="Google Developer Group Ado-Ekiti" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devfestbadge.web.app/" />
+    <meta property="og:title" content="#DevFest Badge Creator" />
+    <meta property="og:description" content="Simply upload your badge data and download ready-to-print badges for #DevFest2025. Express your unique style, connect, and build the future with the DevFest community! Join the global conversation on responsible AI. Create, print, and share your badges to celebrate your DevFest experience!" />
+    <meta property="og:image" content="https://devfestbadge.web.app/images/icon/badge_logo.png" />
+    <meta property="og:image:alt" content="DevFest Badge Examples" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="DevFest Badge Creator" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://devfestbadge.web.app/" />
+    <meta name="twitter:title" content="#DevFest Badge Creator" />
+    <meta name="twitter:description" content="Simply upload your badge data and download ready-to-print badges for #DevFest2025. Express your unique style, connect, and build the future with the DevFest community! Join the global conversation on responsible AI. Create, print, and share your badges to celebrate your DevFest experience!" />
+    <meta name="twitter:image" content="https://devfestbadge.web.app/images/icon/badge_logo.png" />
+    <meta name="twitter:image:alt" content="DevFest Badge Example" />
+    <meta name="twitter:site" content="@GDGAdoEkiti" />
+    <meta name="twitter:creator" content="@olordavis" />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Google+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+    <!-- Add more CSS files if needed -->
+    <link rel="icon" type="image/png" href="https://devfestbadge.web.app/images/icon/logo.png">
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <div id="app-container">
+      <header>
+        <h1>DevFest 2025 Badge Generator</h1>
+        <p>Generate event badges easily. Upload your attendee list.</p>
+      </header>
+      <section id="upload-section">
+        <label for="file-upload" class="upload-label">Supports CSV, XLSX, or JSON</label>
+        <input type="file" id="file-upload" accept=".csv,.xlsx,.json" />
+        <div id="badge-count-label" class="badge-count-label" style="margin-top:0.3rem; font-weight:500; color:var(--accent);"></div>
+      </section>
+      <section id="preview-section">
+        <h2>Badge Preview</h2>
+        <canvas id="badge-preview" width="400" height="600"></canvas>
+      </section>
+      <section id="actions-section">
+        <button id="download-btn" disabled>Download All Badges (ZIP)</button>
+      </section>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+    <footer class="footer themed-footer">
+      <button id="footer-toggle" class="footer-toggle">Instructions</button>
+      <div id="footer-content" class="grid-vertical-container" style="display:none;">
+        <div class="dudu center_text">
+          With <span style="color: red">❤</span> by
+          <a style="color: #2b83fc" href="https://gdg.community.dev/gdg-ado-ekiti">GDG Ado-Ekiti</a>
+          🇳🇬 |
+          <a target="_blank" style="color: #2b83fc"
+            href="https://sites.google.com/view/devfestavatarcreatorprivacy/home">Privacy</a>
+        </div>
+        <div class="center_text dudu" style="line-height: 0px; margin: 5px">
+          <span id="year"></span> Stat:
+          <b><span id="countSpan"></span></b> badges.
+        </div>
+        <a href="https://github.com/olorunfemidavis/DevFestBadge" target="_blank">
+          <img src="./images/open_source.png" alt="Open source" class="open-source-logo" />
+        </a>
+        <section id="sample-section" style="text-align:center; margin:0.2rem 0;">
+          <h4>Download Sample Files</h4>
+          <a href="files/sample.json" download class="sample-link">Sample JSON</a> |
+          <a href="files/sample.csv" download class="sample-link">Sample CSV</a> |
+          <a href="files/sample.xlsx" download class="sample-link">Sample XLSX</a>
+        </section>
+      </div>
+    </footer>
+    <script src="js/site.js"></script>
+    <!-- Add more JS files if needed -->
   </body>
 </html>

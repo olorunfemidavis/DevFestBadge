@@ -1,0 +1,235 @@
+/* DevFest 2025 Badge Generator Styles */
+:root {
+  --primary-bg: #f5f5f5;
+  --primary-text: #222;
+  --accent: #4285f4;
+  --header-bg: #fff;
+  --card-bg: #fff;
+  --border-radius: 12px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: #181818;
+    --primary-text: #f5f5f5;
+    --header-bg: #222;
+    --card-bg: #222;
+    --accent: #8ab4f8;
+  }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#app-container {
+  height: calc(100vh - 2.5rem); /* Reserve space for footer toggle */
+  max-height: calc(100vh - 2.5rem);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+}
+body {
+  margin: 0;
+  font-family: 'Google Sans', Arial, sans-serif;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+}
+header {
+  background: var(--header-bg);
+  padding: 0.5rem 0.2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+header h1 {
+  font-size: 1.7rem;
+  margin: 0.2rem 0 0.1rem 0;
+}
+header p {
+  font-size: 1rem;
+  margin: 0.1rem 0 0 0;
+}
+.upload-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+#file-upload {
+  display: block;
+  margin-bottom: 1rem;
+}
+#upload-section, #preview-section, #actions-section {
+  margin: 0.2rem 0;
+}
+#preview-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+#badge-preview {
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  background: #eee;
+  max-width: 98vw;
+  max-height: 50vh;
+  width: auto;
+  height: auto;
+  margin-bottom: 0.2rem;
+}
+@media (max-width: 600px) {
+  #badge-preview {
+    max-width: 99vw;
+    max-height: 30vh;
+  }
+}
+#preview-controls {
+  margin-top: 1rem;
+}
+#configure-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#actions-section {
+  text-align: center;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+#download-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.7;
+  display: inline-block;
+  margin: 0.1rem auto 0 auto;
+}
+#download-btn:enabled {
+  opacity: 1;
+}
+.sample-link {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 500;
+  margin: 0 0.3rem;
+  transition: color 0.2s;
+}
+.sample-link:hover {
+  color: #222;
+}
+#sample-section {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0.2rem 0;
+  margin-bottom: 0;
+  color: var(--primary-text);
+}
+.footer {
+  width: 100vw;
+  background: var(--card-bg);
+  color: var(--primary-text);
+  border-top: 1px solid #e0e0e0;
+  padding: 0.7rem 0 0.3rem 0;
+  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
+.footer-toggle {
+  width: 100vw;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  margin: 0;
+  transition: background 0.2s;
+}
+.footer-toggle:hover {
+  background: #2b83fc;
+}
+#footer-content {
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.grid-vertical-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.dudu {
+  font-size: 1rem;
+}
+.center_text {
+  text-align: center;
+}
+/* Open source logo should be small and centered */
+.open-source-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 80px;
+  height: auto;
+}
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: var(--header-bg);
+    color: var(--primary-text);
+    border-top: 1px solid #333;
+  }
+  .sample-link:hover {
+    color: #fff;
+  }
+}
+@media (max-width: 600px) {
+  #app-container {
+    max-width: 100vw;
+    padding: 0.1rem;
+    height: calc(100vh - 2.5rem);
+    max-height: calc(100vh - 2.5rem);
+  }
+  header h1 {
+    font-size: 1.2rem;
+  }
+}
+/* Font family mappings for badge rendering */
+.badge-font-google-sans {
+  font-family: 'Google Sans', Arial, sans-serif;
+  font-weight: 400;
+}
+.badge-font-google-sans-medium {
+  font-family: 'Google Sans', Arial, sans-serif;
+  font-weight: 500;
+}
+.badge-font-google-sans-mono {
+  font-family: 'Google Sans Mono', monospace;
+  font-weight: 400;
+}
+.badge-font-google-sans-mono-medium {
+  font-family: 'Google Sans Mono', monospace;
+  font-weight: 500;
+}
