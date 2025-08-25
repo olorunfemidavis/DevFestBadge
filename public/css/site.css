@@ -32,6 +32,8 @@ body {
   align-items: center;
   /* Remove overflow: hidden from #app-container as well */
 }
+
+
 #app-container {
   min-height: 100vh;
   max-height: none;
@@ -285,4 +287,37 @@ header p {
 }
 .footer-heart, .footer-flag, .footer-sep {
   font-size: 1rem;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0.075;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (prefers-color-scheme: dark) and (max-width: 700px) {
+  body::before {
+    background-image: url('../images/background/backdarkmobile.png');
+  }
+}
+@media (prefers-color-scheme: dark) and (min-width: 701px) {
+  body::before {
+    background-image: url('../images/background/backdark.png');
+  }
+}
+@media (prefers-color-scheme: light) and (max-width: 700px) {
+  body::before {
+    background-image: url('../images/background/backlightmobile.png');
+  }
+}
+@media (prefers-color-scheme: light) and (min-width: 701px) {
+  body::before {
+    background-image: url('../images/background/backlight.png');
+  }
 }
