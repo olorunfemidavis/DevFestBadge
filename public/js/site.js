@@ -148,6 +148,8 @@ downloadBtn.addEventListener('click', async () => {
         return;
     }
 
+    downloadBtn.disabled = true; // Disable button
+    fileInput.disabled = true; // Disable file input
     // Wait for fonts to load
     await loadFonts();
 
@@ -211,6 +213,8 @@ downloadBtn.addEventListener('click', async () => {
 
     setTimeout(() => {
         progressContainer.style.display = 'none';
+        downloadBtn.disabled = false; // Re-enable button
+        fileInput.disabled = false; // Re-enable file input
     }, 2000);
 
     // After successful badge generation, increment count
