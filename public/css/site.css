@@ -321,3 +321,22 @@ body::before {
     background-image: url('../images/background/backlight.png');
   }
 }
+
+#progress-container {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-top: 1rem;
+  display: none; /* Initially hidden */
+}
+
+#progress-bar {
+  width: 0%;
+  height: 20px;
+  background-color: var(--accent);
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  line-height: 20px;
+  transition: width 0.3s ease-in-out;
+}

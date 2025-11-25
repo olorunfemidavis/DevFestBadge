@@ -147,21 +147,28 @@ downloadBtn.addEventListener('click', async () => {
         alert('JSZip not loaded yet. Try again in a moment.');
         return;
     }
-    
+
     // Wait for fonts to load
     await loadFonts();
-    
+
     const zip = new JSZip();
-    // Create a hidden canvas for rendering each badge
     const tempCanvas = document.createElement('canvas');
     tempCanvas.width = badgePreview.width;
     tempCanvas.height = badgePreview.height;
     const tempCtx = tempCanvas.getContext('2d');
+
+    const progressContainer = document.getElementById('progress-container');
+    const progressBar = document.getElementById('progress-bar');
+
+    progressContainer.style.display = 'block';
+    progressBar.style.width = '0%';
+    progressBar.textContent = '0%';
+
     for (let i = 0; i < attendeeList.length; i++) {
         const attendee = attendeeList[i];
         let type = (attendee && attendee.participationType) ? attendee.participationType.toLowerCase() : 'general';
         let imgSrc = `images/badge/${type}.png`;
-        // Render badge for each attendee
+
         await new Promise((resolve) => {
             const img = new Image();
             img.onload = function () {
@@ -169,7 +176,6 @@ downloadBtn.addEventListener('click', async () => {
                 tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
                 Object.keys(badgeConfig).forEach(key => {
                     const conf = badgeConfig[key];
-                    // Use the font specified in badgeConfig
                     tempCtx.font = `${conf.fontsize}px "${conf.fontfamily}", Arial, sans-serif`;
                     tempCtx.textAlign = conf.align;
                     tempCtx.textBaseline = 'middle';
@@ -191,12 +197,21 @@ downloadBtn.addEventListener('click', async () => {
             };
             img.src = imgSrc;
         });
+
+        const progress = Math.round(((i + 1) / attendeeList.length) * 100);
+        progressBar.style.width = `${progress}%`;
+        progressBar.textContent = `${progress}%`;
     }
+
     const content = await zip.generateAsync({ type: 'blob' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(content);
     a.download = 'devfest_badges.zip';
     a.click();
+
+    setTimeout(() => {
+        progressContainer.style.display = 'none';
+    }, 2000);
 
     // After successful badge generation, increment count
     fetch("https://abacus.jasoncameron.dev/hit/avatarbadge/batch")
