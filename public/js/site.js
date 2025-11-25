@@ -7,8 +7,7 @@
 // TODO: Add ZIP download functionality
 // TODO: Add theme detection and UI adaptation
 
-// Utility: Use Google Fonts via CSS only
-// Remove FontFace loading
+// Utility: Load fonts explicitly for canvas rendering
 
 // Elements
 const fileInput = document.getElementById('file-upload');
@@ -17,6 +16,23 @@ const downloadBtn = document.getElementById('download-btn');
 
 let attendeeList = [];
 let badgeConfig = {};
+let fontsLoaded = false;
+
+// Ensure Google Fonts are loaded
+async function loadFonts() {
+    try {
+        // Wait for all fonts to be ready
+        await document.fonts.ready;
+        fontsLoaded = true;
+        console.log('All fonts loaded successfully');
+    } catch (error) {
+        console.error('Error loading fonts:', error);
+        fontsLoaded = true; // Continue anyway
+    }
+}
+
+// Start loading fonts immediately
+loadFonts();
 
 // Load badgeConfig from JSON file (no fallback)
 fetch('files/badgeConfig.json')
@@ -39,7 +55,10 @@ badgePreview.width = 1310;
 badgePreview.height = 2048;
 
 // Show badge template image on page load
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
+    // Wait for fonts to be ready
+    await document.fonts.ready;
+    
     const ctx = badgePreview.getContext('2d');
     const img = new Image();
     img.onload = function () {
@@ -77,18 +96,26 @@ fileInput.addEventListener('change', async (e) => {
 });
 
 // Render badge preview for first attendee
-function renderBadgePreview(attendee) {
+async function renderBadgePreview(attendee) {
+    // Wait for fonts to load
+    await loadFonts();
+    
     const ctx = badgePreview.getContext('2d');
     let type = (attendee && attendee.participationType) ? attendee.participationType.toLowerCase() : 'general';
     let imgSrc = `images/badge/${type}.png`;
     const img = new Image();
-    img.onload = function () {
+    img.onload = async function () {
+        // Ensure fonts are loaded before drawing text
+        await document.fonts.ready;
+        
         ctx.clearRect(0, 0, badgePreview.width, badgePreview.height);
         ctx.drawImage(img, 0, 0, badgePreview.width, badgePreview.height);
         if (attendee) {
             Object.keys(badgeConfig).forEach(key => {
                 const conf = badgeConfig[key];
-                ctx.font = `${conf.fontsize}px ${conf.fontfamily}`;
+                // Use the font specified in badgeConfig
+                ctx.font = `${conf.fontsize}px "${conf.fontfamily}", Arial, sans-serif`;
+                console.log(`Rendering ${key} with font: ${ctx.font}`); // Debug log
                 ctx.textAlign = conf.align;
                 ctx.textBaseline = 'middle'; // Vertically center text
                 ctx.fillStyle = '#222';
@@ -120,6 +147,10 @@ downloadBtn.addEventListener('click', async () => {
         alert('JSZip not loaded yet. Try again in a moment.');
         return;
     }
+    
+    // Wait for fonts to load
+    await loadFonts();
+    
     const zip = new JSZip();
     // Create a hidden canvas for rendering each badge
     const tempCanvas = document.createElement('canvas');
@@ -138,7 +169,8 @@ downloadBtn.addEventListener('click', async () => {
                 tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
                 Object.keys(badgeConfig).forEach(key => {
                     const conf = badgeConfig[key];
-                    tempCtx.font = `${conf.fontsize}px ${conf.fontfamily}`;
+                    // Use the font specified in badgeConfig
+                    tempCtx.font = `${conf.fontsize}px "${conf.fontfamily}", Arial, sans-serif`;
                     tempCtx.textAlign = conf.align;
                     tempCtx.textBaseline = 'middle';
                     tempCtx.fillStyle = '#222';
