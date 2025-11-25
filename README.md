@@ -34,6 +34,8 @@ Easily generate ready-to-print event badges for DevFest 2025!
 ### 2025
 - [Ewuji John](https://github.com/JbravoI)
 - David Oluwabusayo (GDG Ado-Ekiti Lead)
+- [Reality Stevens](https://github.com/realitystevens)
+
 
 ## Contributing
 Pull requests and suggestions are welcome! See the [GitHub repo](https://github.com/olorunfemidavis/DevFestBadge).

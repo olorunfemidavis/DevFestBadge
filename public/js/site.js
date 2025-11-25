@@ -14,6 +14,8 @@
 const fileInput = document.getElementById('file-upload');
 const badgePreview = document.getElementById('badge-preview');
 const downloadBtn = document.getElementById('download-btn');
+const progressContainer = document.getElementById('progress-container');
+const progressBar = document.getElementById('progress-bar');
 
 let attendeeList = [];
 let badgeConfig = {};
@@ -120,59 +122,76 @@ downloadBtn.addEventListener('click', async () => {
         alert('JSZip not loaded yet. Try again in a moment.');
         return;
     }
-    const zip = new JSZip();
-    // Create a hidden canvas for rendering each badge
-    const tempCanvas = document.createElement('canvas');
-    tempCanvas.width = badgePreview.width;
-    tempCanvas.height = badgePreview.height;
-    const tempCtx = tempCanvas.getContext('2d');
-    for (let i = 0; i < attendeeList.length; i++) {
-        const attendee = attendeeList[i];
-        let type = (attendee && attendee.participationType) ? attendee.participationType.toLowerCase() : 'general';
-        let imgSrc = `images/badge/${type}.png`;
-        // Render badge for each attendee
-        await new Promise((resolve) => {
-            const img = new Image();
-            img.onload = function () {
-                tempCtx.clearRect(0, 0, tempCanvas.width, tempCanvas.height);
-                tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
-                Object.keys(badgeConfig).forEach(key => {
-                    const conf = badgeConfig[key];
-                    tempCtx.font = `${conf.fontsize}px ${conf.fontfamily}`;
-                    tempCtx.textAlign = conf.align;
-                    tempCtx.textBaseline = 'middle';
-                    tempCtx.fillStyle = '#222';
-                    let xPos = conf.x;
-                    if (conf.align === 'center') xPos = conf.x + conf.w / 2;
-                    tempCtx.fillText(attendee[key] || '', xPos, conf.y + conf.h / 2);
-                });
-                const dataUrl = tempCanvas.toDataURL('image/png');
-                zip.file(`badge_${i + 1}_${attendee.firstname}_${attendee.lastname}.png`, dataUrl.split(',')[1], { base64: true });
-                resolve();
-            };
-            img.onerror = function () {
-                if (imgSrc !== 'images/badge/badge.png') {
-                    img.src = 'images/badge/badge.png';
-                } else {
-                    resolve();
-                }
-            };
-            img.src = imgSrc;
-        });
-    }
-    const content = await zip.generateAsync({ type: 'blob' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(content);
-    a.download = 'devfest_badges.zip';
-    a.click();
 
-    // After successful badge generation, increment count
-    fetch("https://abacus.jasoncameron.dev/hit/avatarbadge/batch")
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("countSpan").textContent = data.value;
-        });
+    downloadBtn.disabled = true;
+    progressContainer.style.display = 'block';
+    progressBar.style.width = '0%';
+
+    try {
+        await new Promise(resolve => setTimeout(resolve, 0)); // Allow UI to update
+
+        const zip = new JSZip();
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = badgePreview.width;
+        tempCanvas.height = badgePreview.height;
+        const tempCtx = tempCanvas.getContext('2d');
+
+        for (let i = 0; i < attendeeList.length; i++) {
+            const attendee = attendeeList[i];
+            let type = (attendee && attendee.participationType) ? attendee.participationType.toLowerCase() : 'general';
+            let imgSrc = `images/badge/${type}.png`;
+
+            await new Promise((resolve) => {
+                const img = new Image();
+                img.onload = function () {
+                    tempCtx.clearRect(0, 0, tempCanvas.width, tempCanvas.height);
+                    tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
+                    Object.keys(badgeConfig).forEach(key => {
+                        const conf = badgeConfig[key];
+                        tempCtx.font = `${conf.fontsize}px ${conf.fontfamily}`;
+                        tempCtx.textAlign = conf.align;
+                        tempCtx.textBaseline = 'middle';
+                        tempCtx.fillStyle = '#222';
+                        let xPos = conf.x;
+                        if (conf.align === 'center') xPos = conf.x + conf.w / 2;
+                        tempCtx.fillText(attendee[key] || '', xPos, conf.y + conf.h / 2);
+                    });
+                    const dataUrl = tempCanvas.toDataURL('image/png');
+                    zip.file(`badge_${i + 1}_${attendee.firstname}_${attendee.lastname}.png`, dataUrl.split(',')[1], { base64: true });
+                    resolve();
+                };
+                img.onerror = function () {
+                    if (imgSrc !== 'images/badge/badge.png') {
+                        img.src = 'images/badge/badge.png';
+                    } else {
+                        resolve();
+                    }
+                };
+                img.src = imgSrc;
+            });
+
+            const progress = ((i + 1) / attendeeList.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        const content = await zip.generateAsync({ type: 'blob' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(content);
+        a.download = 'devfest_badges.zip';
+        a.click();
+
+        fetch("https://abacus.jasoncameron.dev/hit/avatarbadge/batch")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("countSpan").textContent = data.value;
+            });
+    } finally {
+        downloadBtn.disabled = false;
+        progressContainer.style.display = 'none';
+        progressBar.style.width = '0%';
+    }
 });
+
 
 // Toggle footer content visibility
 document.getElementById('footer-toggle').addEventListener('click', function () {
