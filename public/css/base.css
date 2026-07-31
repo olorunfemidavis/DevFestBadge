@@ -1,0 +1,83 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--page-bg);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+  background: var(--page-bg);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(30, 30, 30, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 30, 30, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.12;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background-image: linear-gradient(rgba(240, 240, 240, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(240, 240, 240, 0.08) 1px, transparent 1px);
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 700px) {
+  body::after { background-image: url('../images/background/backdarkmobile.png'); }
+}
+
+@media (prefers-color-scheme: dark) and (min-width: 701px) {
+  body::after { background-image: url('../images/background/backdark.png'); }
+}
+
+@media (prefers-color-scheme: light) and (max-width: 700px) {
+  body::after { background-image: url('../images/background/backlightmobile.png'); }
+}
+
+@media (prefers-color-scheme: light) and (min-width: 701px) {
+  body::after { background-image: url('../images/background/backlight.png'); }
+}
+
+a {
+  color: var(--blue-500);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  letter-spacing: 0;
+}
+
+[hidden] {
+  display: none !important;
+}

@@ -1,34 +1,34 @@
 [
   {
     "location": "GDG Ado-Ekiti",
-    "firstname": "Oluwabusayomi",
-    "lastname": "Afeyinfagbonmeta",
-    "title": "Developer",
-    "organization": "Paperless",
+    "firstname": "Kwame",
+    "lastname": "Kone",
+    "title": "Cloud Engineer",
+    "organization": "Innovation Hub",
     "participationType": "Attendee"
   },
   {
     "location": "GDG Lagos",
-    "firstname": "Jane",
-    "lastname": "Smith",
-    "title": "Senior Developer",
-    "organization": "GDG",
+    "firstname": "Ines",
+    "lastname": "Hassan",
+    "title": "Developer Advocate",
+    "organization": "Open Source Community",
     "participationType": "Speaker"
   },
   {
     "location": "GDG Ibadan",
-    "firstname": "Alex",
-    "lastname": "Brown",
-    "title": "Organizer",
-    "organization": "GDG",
+    "firstname": "Khalid",
+    "lastname": "Nwosu",
+    "title": "Machine Learning Engineer",
+    "organization": "Flutter Community",
     "participationType": "General"
   },
   {
     "location": "GDG Abuja",
-    "firstname": "Mary",
-    "lastname": "Johnson",
-    "title": "Product Manager",
-    "organization": "Google",
+    "firstname": "Chen",
+    "lastname": "Mensah",
+    "title": "QA Engineer",
+    "organization": "Women Techmakers",
     "participationType": "Staff"
   }
 ]
