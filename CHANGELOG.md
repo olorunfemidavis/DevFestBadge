@@ -4,6 +4,7 @@ All notable changes to DevFest Badge Creator are documented here.
 
 ## [Unreleased]
 
+- Hidden Export heading and Download ZIP controls until a valid attendee file is uploaded, while keeping the community count stat line visible at all times.
 - Configured official Firebase Realtime Database SDK configuration (`devfestbadge`) in `index.html`.
 - Deferred `fileUploads` and `uploadedRows` counter increments so they register only when a badge download is initiated.
 - Added session tracking flags to prevent duplicate `fileUploads` counter increments when re-downloading the same uploaded file.

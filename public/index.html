@@ -79,13 +79,15 @@
       </section>
 
       <section class="tool-panel actions-panel" aria-labelledby="actions-title">
-        <div class="panel-heading">
-          <p class="eyebrow">Export</p>
-          <h2 id="actions-title">Download badges</h2>
-        </div>
-        <button id="download-btn" class="primary-action" disabled type="button">Download ZIP</button>
-        <div id="progress-container" class="progress-container" hidden>
-          <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
+        <div id="export-section" hidden>
+          <div class="panel-heading">
+            <p class="eyebrow">Export</p>
+            <h2 id="actions-title">Download badges</h2>
+          </div>
+          <button id="download-btn" class="primary-action" disabled type="button">Download ZIP</button>
+          <div id="progress-container" class="progress-container" hidden>
+            <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
+          </div>
         </div>
         <p class="stat-line"><span id="year"></span> community count: <strong><span id="countSpan">0</span></strong> badges</p>
       </section>

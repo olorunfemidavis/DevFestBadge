@@ -1,4 +1,4 @@
-﻿#file-upload {
+#file-upload {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -57,6 +57,10 @@
 .stat-line {
   color: var(--muted);
   line-height: 1.45;
+}
+
+#export-section:not([hidden]) {
+  margin-bottom: 18px;
 }
 
 .status-line {

@@ -11,6 +11,7 @@
   var progressBar = document.getElementById('progress-bar');
   var countSpan = document.getElementById('countSpan');
   var yearSpan = document.getElementById('year');
+  var exportSection = document.getElementById('export-section');
 
   var attendeeList = [];
   var hasTrackedUploadForCurrentFile = false;
@@ -120,6 +121,7 @@
     setStatus('Reading file...');
     validationSummary.hidden = true;
     downloadBtn.disabled = true;
+    if (exportSection) exportSection.hidden = true;
     hasTrackedUploadForCurrentFile = false;
 
     try {
@@ -129,6 +131,7 @@
 
       if (!attendeeList.length) {
         setStatus('No valid badge rows found.');
+        if (exportSection) exportSection.hidden = true;
         await window.badgeRenderer.renderBadge(badgePreview, null, badgeConfig);
         setPreviewType('general');
         return;
@@ -137,10 +140,12 @@
       setStatus('Rendering first badge...');
       await window.badgeRenderer.renderBadge(badgePreview, attendeeList[0], badgeConfig);
       setPreviewType(attendeeList[0].participationType);
+      if (exportSection) exportSection.hidden = false;
       downloadBtn.disabled = false;
       setStatus(attendeeList.length + ' badge' + (attendeeList.length === 1 ? '' : 's') + ' ready from ' + result.rawCount + ' row' + (result.rawCount === 1 ? '' : 's') + '.');
     } catch (error) {
       attendeeList = [];
+      if (exportSection) exportSection.hidden = true;
       setStatus('Could not parse this file.');
       validationSummary.innerHTML = escapeHtml(error.message || error);
       validationSummary.hidden = false;
