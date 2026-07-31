@@ -1,8 +1,13 @@
-﻿# DevFest 2026 Badge Creator
+# DevFest 2026 Badge Creator
+
+**Read this in other languages:**  
+[English](README.md) | [Español](docs/locales/README.es.md) | [Français](docs/locales/README.fr.md) | [Português](docs/locales/README.pt.md) | [Èdè Yorùbá](docs/locales/README.yo.md) | [Deutsch](docs/locales/README.de.md) | [Türkçe](docs/locales/README.tr.md) | [العربية](docs/locales/README.ar.md) | [हिन्दी](docs/locales/README.hi.md) | [日本語](docs/locales/README.ja.md) | [Kiswahili](docs/locales/README.sw.md)
 
 DevFest Badge Creator turns attendee data into ready-to-print DevFest badges. It supports CSV, XLSX, and JSON files, previews the first valid badge, and downloads the generated badges as a ZIP.
 
 Live app: https://devfestbadge.web.app
+
+<img src="public/images/icon/badge_logo.png" width="400" alt="DevFest Badge Creator logo">
 
 ## What It Does
 
