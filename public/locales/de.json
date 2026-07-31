@@ -1,0 +1,52 @@
+{
+  "app_title": "Badge-Ersteller",
+  "app_tagline": "Erstellen Sie druckbare Badges aus Teilnehmerdaten.",
+  "data_heading": "Daten",
+  "upload_title": "Teilnehmerdatei hochladen",
+  "choose_file_prompt": "Wählen Sie CSV, XLSX oder JSON",
+  "no_file_selected": "Keine Datei ausgewählt",
+  "preview_heading": "Vorschau",
+  "preview_title": "Erstes Badge",
+  "export_heading": "Exportieren",
+  "actions_title": "Badges herunterladen",
+  "download_zip": "ZIP herunterladen",
+  "community_count": "{year} Community-Zähler: {count} Badges",
+  "sample_csv": "Beispiel CSV",
+  "sample_xlsx": "Beispiel XLSX",
+  "sample_json": "Beispiel JSON",
+  "language_selector_label": "Sprache",
+
+  "footer_built_with": "Erstellt mit",
+  "footer_by": "von",
+  "footer_and": "und",
+
+  "type_general": "Allgemein",
+  "type_speaker": "Sprecher",
+  "type_staff": "Personal",
+  "type_attendee": "Teilnehmer",
+
+  "stat_prefix": "{year} Community-Zähler:",
+  "stat_suffix": "Badges",
+
+  "field_firstname": "Vorname",
+  "field_lastname": "Nachname",
+  "field_location": "Ort",
+
+  "status_initial": "Bereit",
+  "status_reading": "Datei wird gelesen...",
+  "status_no_valid_rows": "Keine gültigen Badge-Zeilen gefunden.",
+  "status_rendering_first": "Erstes Badge wird gerendert...",
+  "status_ready_count": "{count} Badge{plural} bereit aus {rawCount} Zeile{rawPlural}.",
+  "status_preparing_zip": "ZIP-Datei wird vorbereitet...",
+  "status_generating_progress": "{current} von {total} Badges generiert...",
+  "status_compressing_zip": "ZIP-Datei wird komprimiert...",
+  "status_downloaded_count": "{total} Badge{plural} heruntergeladen.",
+  "status_download_failed": "Badge-Download fehlgeschlagen.",
+  "status_could_not_parse": "Diese Datei konnte nicht verarbeitet werden.",
+  "status_could_not_init": "Badge-Ersteller konnte nicht initialisiert werden.",
+
+  "validation_issues_skipped": "{count} Zeilenproblem{plural} übersprungen",
+  "validation_warnings_applied": "{count} Warnung{plural} angewendet",
+  "val_missing_field": "Zeile {rowNumber}: {field} fehlt.",
+  "val_unknown_type": "Zeile {rowNumber}: unbekannter Teilnahme-Typ \"{rawType}\"; {fallback} wird verwendet."
+}

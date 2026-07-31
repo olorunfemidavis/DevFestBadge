@@ -1,0 +1,52 @@
+{
+  "app_title": "Tengeneza Baji",
+  "app_tagline": "Tengeneza baji za kuchapisha kutoka kwa data ya washiriki.",
+  "data_heading": "Data",
+  "upload_title": "Pakia faili ya washiriki",
+  "choose_file_prompt": "Chagua CSV, XLSX, au JSON",
+  "no_file_selected": "Hakuna faili iliyochaguliwa",
+  "preview_heading": "Kipangilio",
+  "preview_title": "Baji ya kwanza",
+  "export_heading": "Pakua",
+  "actions_title": "Pakua baji",
+  "download_zip": "Pakua ZIP",
+  "community_count": "Hesabu ya jamii ya {year}: baji {count}",
+  "sample_csv": "Mfano wa CSV",
+  "sample_xlsx": "Mfano wa XLSX",
+  "sample_json": "Mfano wa JSON",
+  "language_selector_label": "Lugha",
+
+  "footer_built_with": "Imejengwa kwa",
+  "footer_by": "na",
+  "footer_and": "na",
+
+  "type_general": "Kawaida",
+  "type_speaker": "Mzungumzaji",
+  "type_staff": "Wafanyakazi",
+  "type_attendee": "Mshiriki",
+
+  "stat_prefix": "Hesabu ya jamii ya {year}:",
+  "stat_suffix": "baji",
+
+  "field_firstname": "jina la kwanza",
+  "field_lastname": "jina la mwisho",
+  "field_location": "mahali",
+
+  "status_initial": "Tayari",
+  "status_reading": "Inasoma faili...",
+  "status_no_valid_rows": "Hakuna safu halali za baji zilizopatikana.",
+  "status_rendering_first": "Inatengeneza baji ya kwanza...",
+  "status_ready_count": "Baji {count} zipo tayari kutoka kwa safu {rawCount}.",
+  "status_preparing_zip": "Inaandaa faili ya ZIP...",
+  "status_generating_progress": "Imetengeneza {current} kati ya baji {total}...",
+  "status_compressing_zip": "Inabananisha faili ya ZIP...",
+  "status_downloaded_count": "Baji {total} zimepakuliwa.",
+  "status_download_failed": "Upakuaji wa baji umefeli.",
+  "status_could_not_parse": "Imeshindwa kusoma faili hii.",
+  "status_could_not_init": "Imeshindwa kuanzisha mtengenezaji wa baji.",
+
+  "validation_issues_skipped": "Matatizo ya safu {count} yamerukwa",
+  "validation_warnings_applied": "Onyo {count} limetumika",
+  "val_missing_field": "Safu ya {rowNumber}: inakosa {field}.",
+  "val_unknown_type": "Safu ya {rowNumber}: aina asiyojulikana ya ushiriki \"{rawType}\"; inatumia {fallback}."
+}

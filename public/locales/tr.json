@@ -1,0 +1,52 @@
+{
+  "app_title": "Yaka Kartı Oluşturucu",
+  "app_tagline": "Katılımcı verilerinden basılabilir yaka kartları oluşturun.",
+  "data_heading": "Veri",
+  "upload_title": "Katılımcı dosyasını yükle",
+  "choose_file_prompt": "CSV, XLSX veya JSON seçin",
+  "no_file_selected": "Dosya seçilmedi",
+  "preview_heading": "Önizleme",
+  "preview_title": "İlk yaka kartı",
+  "export_heading": "Dışa Aktar",
+  "actions_title": "Yaka kartlarını indir",
+  "download_zip": "ZIP İndir",
+  "community_count": "{year} topluluk sayısı: {count} yaka kartı",
+  "sample_csv": "Örnek CSV",
+  "sample_xlsx": "Örnek XLSX",
+  "sample_json": "Örnek JSON",
+  "language_selector_label": "Dil",
+
+  "footer_built_with": "ile yapıldı:",
+  "footer_by": "tarafından:",
+  "footer_and": "ve",
+
+  "type_general": "Genel",
+  "type_speaker": "Konuşmacı",
+  "type_staff": "Personel",
+  "type_attendee": "Katılımcı",
+
+  "stat_prefix": "{year} topluluk sayısı:",
+  "stat_suffix": "yaka kartı",
+
+  "field_firstname": "ad",
+  "field_lastname": "soyad",
+  "field_location": "şehir",
+
+  "status_initial": "Hazır",
+  "status_reading": "Dosya okunuyor...",
+  "status_no_valid_rows": "Geçerli yaka kartı satırı bulunamadı.",
+  "status_rendering_first": "İlk yaka kartı oluşturuluyor...",
+  "status_ready_count": "{rawCount} satırdan {count} yaka kartı hazır.",
+  "status_preparing_zip": "ZIP dosyası hazırlanıyor...",
+  "status_generating_progress": "{total} yaka kartından {current} tanesi oluşturuldu...",
+  "status_compressing_zip": "ZIP dosyası sıkıştırılıyor...",
+  "status_downloaded_count": "{total} yaka kartı indirildi.",
+  "status_download_failed": "Yaka kartı indirme başarısız oldu.",
+  "status_could_not_parse": "Bu dosya ayrıştırılamadı.",
+  "status_could_not_init": "Yaka kartı oluşturucu başlatılamadı.",
+
+  "validation_issues_skipped": "{count} satır sorunu atlandı",
+  "validation_warnings_applied": "{count} uyarı uygulandı",
+  "val_missing_field": "Satır {rowNumber}: {field} eksik.",
+  "val_unknown_type": "Satır {rowNumber}: bilinmeyen katılım türü \"{rawType}\"; {fallback} kullanılıyor."
+}

@@ -1,0 +1,52 @@
+{
+  "app_title": "बैज क्रिएटर",
+  "app_tagline": "उपस्थिति डेटा से प्रिंट योग्य बैज बनाएं।",
+  "data_heading": "डेटा",
+  "upload_title": "उपस्थिति फ़ाइल अपलोड करें",
+  "choose_file_prompt": "CSV, XLSX या JSON चुनें",
+  "no_file_selected": "कोई फ़ाइल चुनी नहीं गई",
+  "preview_heading": "पूर्वावलोकन",
+  "preview_title": "पहला बैज",
+  "export_heading": "निर्यात",
+  "actions_title": "बैज डाउनलोड करें",
+  "download_zip": "ZIP डाउनलोड करें",
+  "community_count": "{year} कम्युनिटी गिनती: {count} बैज",
+  "sample_csv": "नमूना CSV",
+  "sample_xlsx": "नमूना XLSX",
+  "sample_json": "नमूना JSON",
+  "language_selector_label": "भाषा",
+
+  "footer_built_with": "के साथ बनाया गया",
+  "footer_by": "द्वारा",
+  "footer_and": "और",
+
+  "type_general": "सामान्य",
+  "type_speaker": "वक्ता",
+  "type_staff": "कर्मचारी",
+  "type_attendee": "प्रतिभागी",
+
+  "stat_prefix": "{year} कम्युनिटी गिनती:",
+  "stat_suffix": "बैज",
+
+  "field_firstname": "पहला नाम",
+  "field_lastname": "अंतिम नाम",
+  "field_location": "स्थान",
+
+  "status_initial": "तैयार",
+  "status_reading": "फ़ाइल पढ़ी जा रही है...",
+  "status_no_valid_rows": "कोई वैध बैज पंक्तियाँ नहीं मिलीं।",
+  "status_rendering_first": "पहला बैज बनाया जा रहा है...",
+  "status_ready_count": "{rawCount} पंक्तियों में से {count} बैज तैयार हैं।",
+  "status_preparing_zip": "ZIP फ़ाइल तैयार की जा रही है...",
+  "status_generating_progress": "{total} में से {current} बैज बन गए हैं...",
+  "status_compressing_zip": "ZIP फ़ाइल को कंप्रेस किया जा रहा है...",
+  "status_downloaded_count": "{total} बैज डाउनलोड हो गए हैं।",
+  "status_download_failed": "बैज डाउनलोड विफल रहा।",
+  "status_could_not_parse": "इस फ़ाइल को पार्स नहीं किया जा सका।",
+  "status_could_not_init": "बैज क्रिएटर प्रारंभ नहीं किया जा सका।",
+
+  "validation_issues_skipped": "{count} पंक्ति समस्याएँ छोड़ी गईं",
+  "validation_warnings_applied": "{count} चेतावनी लागू की गई",
+  "val_missing_field": "पंक्ति {rowNumber}: {field} गायब है।",
+  "val_unknown_type": "पंक्ति {rowNumber}: अज्ञात भागीदारी प्रकार \"{rawType}\"; {fallback} का उपयोग किया जा रहा है।"
+}

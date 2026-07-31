@@ -1,0 +1,52 @@
+{
+  "app_title": "Badge Creator",
+  "app_tagline": "Create print badges from attendee data.",
+  "data_heading": "Data",
+  "upload_title": "Upload attendee file",
+  "choose_file_prompt": "Choose CSV, XLSX, or JSON",
+  "no_file_selected": "No file selected",
+  "preview_heading": "Preview",
+  "preview_title": "First badge",
+  "export_heading": "Export",
+  "actions_title": "Download badges",
+  "download_zip": "Download ZIP",
+  "community_count": "{year} community count: {count} badges",
+  "sample_csv": "Sample CSV",
+  "sample_xlsx": "Sample XLSX",
+  "sample_json": "Sample JSON",
+  "language_selector_label": "Language",
+
+  "footer_built_with": "Built with",
+  "footer_by": "by",
+  "footer_and": "and",
+
+  "type_general": "General",
+  "type_speaker": "Speaker",
+  "type_staff": "Staff",
+  "type_attendee": "Attendee",
+
+  "stat_prefix": "{year} community count:",
+  "stat_suffix": "badges",
+
+  "field_firstname": "firstname",
+  "field_lastname": "lastname",
+  "field_location": "location",
+
+  "status_initial": "Ready",
+  "status_reading": "Reading file...",
+  "status_no_valid_rows": "No valid badge rows found.",
+  "status_rendering_first": "Rendering first badge...",
+  "status_ready_count": "{count} badge{plural} ready from {rawCount} row{rawPlural}.",
+  "status_preparing_zip": "Preparing ZIP...",
+  "status_generating_progress": "Generated {current} of {total} badges...",
+  "status_compressing_zip": "Compressing ZIP...",
+  "status_downloaded_count": "{total} badge{plural} downloaded.",
+  "status_download_failed": "Badge download failed.",
+  "status_could_not_parse": "Could not parse this file.",
+  "status_could_not_init": "Could not initialize badge creator.",
+
+  "validation_issues_skipped": "{count} row issue{plural} skipped",
+  "validation_warnings_applied": "{count} warning{plural} applied",
+  "val_missing_field": "Row {rowNumber}: missing {field}.",
+  "val_unknown_type": "Row {rowNumber}: unknown participationType \"{rawType}\"; using {fallback}."
+}

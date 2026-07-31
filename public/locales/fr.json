@@ -1,0 +1,52 @@
+{
+  "app_title": "Créateur de Badges",
+  "app_tagline": "Créez des badges imprimables à partir des données des participants.",
+  "data_heading": "Données",
+  "upload_title": "Importer le fichier des participants",
+  "choose_file_prompt": "Choisissez CSV, XLSX ou JSON",
+  "no_file_selected": "Aucun fichier sélectionné",
+  "preview_heading": "Aperçu",
+  "preview_title": "Premier badge",
+  "export_heading": "Exporter",
+  "actions_title": "Télécharger les badges",
+  "download_zip": "Télécharger le ZIP",
+  "community_count": "Compteur de la communauté {year} : {count} badges",
+  "sample_csv": "Exemple CSV",
+  "sample_xlsx": "Exemple XLSX",
+  "sample_json": "Exemple JSON",
+  "language_selector_label": "Langue",
+
+  "footer_built_with": "Fait avec",
+  "footer_by": "par",
+  "footer_and": "et",
+
+  "type_general": "Général",
+  "type_speaker": "Intervenant",
+  "type_staff": "Équipe",
+  "type_attendee": "Participant",
+
+  "stat_prefix": "Compteur de la communauté {year} :",
+  "stat_suffix": "badges",
+
+  "field_firstname": "prénom",
+  "field_lastname": "nom",
+  "field_location": "lieu",
+
+  "status_initial": "Prêt",
+  "status_reading": "Lecture du fichier...",
+  "status_no_valid_rows": "Aucune ligne de badge valide trouvée.",
+  "status_rendering_first": "Génération du premier badge...",
+  "status_ready_count": "{count} badge{plural} prêt{plural} sur {rawCount} ligne{rawPlural}.",
+  "status_preparing_zip": "Préparation du fichier ZIP...",
+  "status_generating_progress": "Généré {current} sur {total} badges...",
+  "status_compressing_zip": "Compression du fichier ZIP...",
+  "status_downloaded_count": "{total} badge{plural} téléchargé{plural}.",
+  "status_download_failed": "Échec du téléchargement des badges.",
+  "status_could_not_parse": "Impossible d'analyser ce fichier.",
+  "status_could_not_init": "Impossible d'initialiser le créateur de badges.",
+
+  "validation_issues_skipped": "{count} problème{plural} de ligne ignoré{plural}",
+  "validation_warnings_applied": "{count} avertissement{plural} appliqué{plural}",
+  "val_missing_field": "Ligne {rowNumber} : {field} manquant.",
+  "val_unknown_type": "Ligne {rowNumber} : type de participation inconnu \"{rawType}\" ; utilisation de {fallback}."
+}

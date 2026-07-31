@@ -1,0 +1,52 @@
+{
+  "app_title": "Olùṣèdá Káàdì Ìdánimọ̀",
+  "app_tagline": "Ṣèdá káàdì ìdánimọ̀ títẹ̀ láti inú àwọn ìsọfúnni àwọn àlejò.",
+  "data_heading": "Àwọn Ìsọfúnni",
+  "upload_title": "Tẹ àkọsílẹ̀ àwọn àlejò síbẹ̀",
+  "choose_file_prompt": "Sọ tẹ CSV, XLSX, tàbí JSON",
+  "no_file_selected": "Kò sí àkọsílẹ̀ kankan ti a mu",
+  "preview_heading": "Àyẹ̀wò Ṣíṣe",
+  "preview_title": "Káàdì Àkọ́kọ́",
+  "export_heading": "Ìjáde",
+  "actions_title": "Gba àwọn káàdì ìdánimọ̀",
+  "download_zip": "Gba ZIP síbẹ̀",
+  "community_count": "Iye àwọn ara àgbègbè ni ọdún {year}: káàdì {count}",
+  "sample_csv": "Ápẹẹrẹ CSV",
+  "sample_xlsx": "Ápẹẹrẹ XLSX",
+  "sample_json": "Ápẹẹrẹ JSON",
+  "language_selector_label": "Èdè",
+
+  "footer_built_with": "A ṣe pẹ̀lú",
+  "footer_by": "nípasẹ̀",
+  "footer_and": "àti",
+
+  "type_general": "Gbogbogbò",
+  "type_speaker": "Olùsọ̀rọ̀",
+  "type_staff": "Oṣìṣẹ́",
+  "type_attendee": "Àlejò",
+
+  "stat_prefix": "Iye àwọn ara àgbègbè ọdún {year}:",
+  "stat_suffix": "káàdì",
+
+  "field_firstname": "orúkọ ákọ́kọ́",
+  "field_lastname": "orúkọ ìdílé",
+  "field_location": "ààyè/ìlú",
+
+  "status_initial": "Ó ti gbaradì",
+  "status_reading": "À ń ka àkọsílẹ̀...",
+  "status_no_valid_rows": "Kò sí ìlà káàdì tó tọ́ kankan ti a rí.",
+  "status_rendering_first": "À ń ṣe káàdì àkọ́kọ́...",
+  "status_ready_count": "Káàdì {count} ti gbaradì láti inú ìlà {rawCount}.",
+  "status_preparing_zip": "À ń ṣètò àkọsílẹ̀ ZIP...",
+  "status_generating_progress": "A ti ṣe {current} láti inú káàdì {total}...",
+  "status_compressing_zip": "À ń mu àkọsílẹ̀ ZIP kéré...",
+  "status_downloaded_count": "A ti gba káàdì {total} síbẹ̀.",
+  "status_download_failed": "Àṣìṣe wáyé nínú gbígbà àwọn káàdì.",
+  "status_could_not_parse": "Kò ṣe é ka àkọsílẹ̀ yìí.",
+  "status_could_not_init": "Kò ṣe é bẹ̀rẹ̀ olùṣèdá káàdì.",
+
+  "validation_issues_skipped": "A fo àṣìṣe ìlà {count} da",
+  "validation_warnings_applied": "A lo ìtìlẹ́yìn ìkìlọ̀ {count}",
+  "val_missing_field": "Ìlà {rowNumber}: {field} kò sí.",
+  "val_unknown_type": "Ìlà {rowNumber}: irú ìpínlẹ̀ kò mọ̀ \"{rawType}\"; a ń lo {fallback}."
+}

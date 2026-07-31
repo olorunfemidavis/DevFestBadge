@@ -4,6 +4,10 @@ All notable changes to DevFest Badge Creator are documented here.
 
 ## [Unreleased]
 
+- Added comprehensive multi-language localization (i18n) supporting 12 strategic GDG languages: English (`en`), Spanish (`es`), French (`fr`), Portuguese (`pt`), Yoruba (`yo`), German (`de`), Turkish (`tr`), Arabic (`ar` with RTL support), Hindi (`hi`), Japanese (`ja`), Korean (`ko`), and Swahili (`sw`).
+- Added browser language autodetection, URL language overrides (`?lang=yo`), `localStorage` persistence, and a footer language selector dropdown.
+- Expanded column header remapping in `fileparse.js` to recognize multi-lingual attendee spreadsheet headers across Yoruba, Spanish, French, Portuguese, German, Turkish, and Swahili.
+- Localized all UI text, status messages, badge participation pills (`General`, `Speaker`, `Staff`, `Attendee`), community counter stat lines, footer credit connectors, and row-level validation detail messages.
 - Hidden Preview panel section on mobile view (`max-width: 900px`).
 - Compacted top brand header and reduced preview canvas frame width (`280px`) so the default landing page fits above the fold on desktop screens.
 - Updated public sample files (`sample.csv`, `sample.json`, `sample.xlsx`)

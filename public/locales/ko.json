@@ -1,0 +1,52 @@
+{
+  "app_title": "뱃지 생성기",
+  "app_tagline": "참석자 데이터로 인쇄용 뱃지를 만듭니다.",
+  "data_heading": "데이터",
+  "upload_title": "참석자 파일 업로드",
+  "choose_file_prompt": "CSV, XLSX 또는 JSON 선택",
+  "no_file_selected": "선택된 파일 없음",
+  "preview_heading": "미리보기",
+  "preview_title": "첫 번째 뱃지",
+  "export_heading": "내보내기",
+  "actions_title": "뱃지 다운로드",
+  "download_zip": "ZIP 다운로드",
+  "community_count": "{year} 커뮤니티 수: {count}개 뱃지",
+  "sample_csv": "샘플 CSV",
+  "sample_xlsx": "샘플 XLSX",
+  "sample_json": "샘플 JSON",
+  "language_selector_label": "언어",
+
+  "footer_built_with": "제작 도구:",
+  "footer_by": "제작자:",
+  "footer_and": "및",
+
+  "type_general": "일반",
+  "type_speaker": "연사",
+  "type_staff": "스태프",
+  "type_attendee": "참석자",
+
+  "stat_prefix": "{year} 커뮤니티 수:",
+  "stat_suffix": "개 뱃지",
+
+  "field_firstname": "이름",
+  "field_lastname": "성",
+  "field_location": "위치",
+
+  "status_initial": "준비됨",
+  "status_reading": "파일 읽는 중...",
+  "status_no_valid_rows": "유효한 뱃지 행을 찾을 수 없습니다.",
+  "status_rendering_first": "첫 번째 뱃지 생성 중...",
+  "status_ready_count": "{rawCount}개 행에서 {count}개 뱃지가 준비되었습니다.",
+  "status_preparing_zip": "ZIP 파일 준비 중...",
+  "status_generating_progress": "{total}개 중 {current}개 뱃지 생성 완료...",
+  "status_compressing_zip": "ZIP 파일 압축 중...",
+  "status_downloaded_count": "{total}개 뱃지를 다운로드했습니다.",
+  "status_download_failed": "뱃지 다운로드 실패.",
+  "status_could_not_parse": "이 파일을 분석할 수 없습니다.",
+  "status_could_not_init": "뱃지 생성기를 초기화할 수 없습니다.",
+
+  "validation_issues_skipped": "{count}개 행 문제 건너뜀",
+  "validation_warnings_applied": "{count}개 경고 적용됨",
+  "val_missing_field": "{rowNumber}행: {field} 누락됨.",
+  "val_unknown_type": "{rowNumber}행: 알 수 없는 참가 유형 \"{rawType}\"; {fallback} 사용함."
+}

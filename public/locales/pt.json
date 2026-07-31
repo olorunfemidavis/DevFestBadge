@@ -1,0 +1,52 @@
+{
+  "app_title": "Criador de Crachás",
+  "app_tagline": "Crie crachás impressos a partir dos dados dos participantes.",
+  "data_heading": "Dados",
+  "upload_title": "Enviar arquivo de participantes",
+  "choose_file_prompt": "Escolha CSV, XLSX ou JSON",
+  "no_file_selected": "Nenhum arquivo selecionado",
+  "preview_heading": "Visualização",
+  "preview_title": "Primeiro crachá",
+  "export_heading": "Exportar",
+  "actions_title": "Baixar crachás",
+  "download_zip": "Baixar ZIP",
+  "community_count": "Contagem da comunidade em {year}: {count} crachás",
+  "sample_csv": "Exemplo CSV",
+  "sample_xlsx": "Exemplo XLSX",
+  "sample_json": "Exemplo JSON",
+  "language_selector_label": "Idioma",
+
+  "footer_built_with": "Feito com",
+  "footer_by": "por",
+  "footer_and": "e",
+
+  "type_general": "Geral",
+  "type_speaker": "Palestrante",
+  "type_staff": "Equipe",
+  "type_attendee": "Participante",
+
+  "stat_prefix": "Contagem da comunidade em {year}:",
+  "stat_suffix": "crachás",
+
+  "field_firstname": "nome",
+  "field_lastname": "sobrenome",
+  "field_location": "localização",
+
+  "status_initial": "Pronto",
+  "status_reading": "Lendo arquivo...",
+  "status_no_valid_rows": "Nenhuma linha válida de crachá encontrada.",
+  "status_rendering_first": "Gerando primeiro crachá...",
+  "status_ready_count": "{count} crachá{plural} pronto{plural} de {rawCount} linha{rawPlural}.",
+  "status_preparing_zip": "Preparando arquivo ZIP...",
+  "status_generating_progress": "Gerado {current} de {total} crachás...",
+  "status_compressing_zip": "Compactando arquivo ZIP...",
+  "status_downloaded_count": "{total} crachá{plural} baixado{plural}.",
+  "status_download_failed": "Falha ao baixar crachás.",
+  "status_could_not_parse": "Não foi possível analisar este arquivo.",
+  "status_could_not_init": "Não foi possível inicializar o criador de crachás.",
+
+  "validation_issues_skipped": "{count} problema{plural} de linha ignorado{plural}",
+  "validation_warnings_applied": "{count} aviso{plural} aplicado{plural}",
+  "val_missing_field": "Linha {rowNumber}: {field} ausente.",
+  "val_unknown_type": "Linha {rowNumber}: tipo de participação desconhecido \"{rawType}\"; usando {fallback}."
+}
