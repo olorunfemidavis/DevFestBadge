@@ -67,6 +67,16 @@ For testing, use query-string overrides:
 
 Current counters are year-prefixed under `usage/badges`, including site visits, file uploads, uploaded rows, generated badge totals, and batches.
 
+### Realtime Database Security Rules
+
+Security rules are managed in `database.rules.json` and deployed via `firebase deploy --only database`.
+
+The rules enforce:
+- Global public read (`.read: true`) for stats display across all years.
+- Historical data protection (`$year >= '2026'`).
+- Path-scoped numeric writes for `siteVisits`, `fileUploads`, `uploadedRows`, `totalBadges`, and `batches`.
+- Monotonic increment checks (`newData.val() >= data.val()`) and non-numeric value blocking (`newData.isNumber()`).
+
 ## Local Development
 
 Serve the static app from the project root:
