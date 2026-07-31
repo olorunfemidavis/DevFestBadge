@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   var fileInput = document.getElementById('file-upload');
   var fileDrop = document.getElementById('file-drop');
   var fileName = document.getElementById('file-name');
@@ -13,6 +13,7 @@
   var yearSpan = document.getElementById('year');
 
   var attendeeList = [];
+  var hasTrackedUploadForCurrentFile = false;
   var badgeConfig = null;
   var jsZipPromise = null;
 
@@ -119,6 +120,7 @@
     setStatus('Reading file...');
     validationSummary.hidden = true;
     downloadBtn.disabled = true;
+    hasTrackedUploadForCurrentFile = false;
 
     try {
       var result = await window.parseAttendeeFile(file);
@@ -137,7 +139,6 @@
       setPreviewType(attendeeList[0].participationType);
       downloadBtn.disabled = false;
       setStatus(attendeeList.length + ' badge' + (attendeeList.length === 1 ? '' : 's') + ' ready from ' + result.rawCount + ' row' + (result.rawCount === 1 ? '' : 's') + '.');
-      window.trackBadgeFileUpload(attendeeList.length);
     } catch (error) {
       attendeeList = [];
       setStatus('Could not parse this file.');
@@ -195,6 +196,10 @@
       setTimeout(function () { URL.revokeObjectURL(url); }, 30000);
 
       setStatus(total + ' badge' + (total === 1 ? '' : 's') + ' downloaded.');
+      if (!hasTrackedUploadForCurrentFile) {
+        window.trackBadgeFileUpload(total);
+        hasTrackedUploadForCurrentFile = true;
+      }
       window.trackBadgesGenerated(total, function (newCount) {
         countSpan.textContent = newCount;
       });

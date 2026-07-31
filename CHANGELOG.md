@@ -1,9 +1,13 @@
-﻿# Changelog
+# Changelog
 
 All notable changes to DevFest Badge Creator are documented here.
 
 ## [Unreleased]
 
+- Configured official Firebase Realtime Database SDK configuration (`devfestbadge`) in `index.html`.
+- Deferred `fileUploads` and `uploadedRows` counter increments so they register only when a badge download is initiated.
+- Added session tracking flags to prevent duplicate `fileUploads` counter increments when re-downloading the same uploaded file.
+- Added comprehensive numeric input sanitization and transaction safeguards (`sanitizePositiveInt`, `safeIncrement`) to prevent invalid, negative, or corrupted counter data in Firebase Realtime Database.
 - Refreshed the app shell for DevFest 2026 with print-inspired panels, badge-first preview, and direct sample-file links.
 - Split CSS into token, base, layout, component, and responsive files.
 - Split JavaScript into Firebase usage tracking, file parsing, badge rendering, and page orchestration modules.
