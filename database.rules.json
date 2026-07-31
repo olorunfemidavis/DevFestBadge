@@ -1,0 +1,26 @@
+{
+  "rules": {
+    ".read": true,
+    "$year": {
+      "usage": {
+        "badges": {
+          "siteVisits": {
+            ".write": "$year >= '2026' && newData.isNumber() && newData.val() >= 0 && (!data.exists() || newData.val() >= data.val())"
+          },
+          "fileUploads": {
+            ".write": "$year >= '2026' && newData.isNumber() && newData.val() >= 0 && (!data.exists() || newData.val() >= data.val())"
+          },
+          "uploadedRows": {
+            ".write": "$year >= '2026' && newData.isNumber() && newData.val() >= 0 && (!data.exists() || newData.val() >= data.val())"
+          },
+          "totalBadges": {
+            ".write": "$year >= '2026' && newData.isNumber() && newData.val() >= 0 && (!data.exists() || newData.val() >= data.val())"
+          },
+          "batches": {
+            ".write": "$year >= '2026' && newData.isNumber() && newData.val() >= 0 && (!data.exists() || newData.val() >= data.val())"
+          }
+        }
+      }
+    }
+  }
+}

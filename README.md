@@ -1,8 +1,13 @@
-﻿# DevFest 2026 Badge Creator
+# DevFest 2026 Badge Creator
+
+**Read this in other languages:**  
+[English](README.md) | [Español](docs/locales/README.es.md) | [Français](docs/locales/README.fr.md) | [Português](docs/locales/README.pt.md) | [Èdè Yorùbá](docs/locales/README.yo.md) | [Deutsch](docs/locales/README.de.md) | [Türkçe](docs/locales/README.tr.md) | [العربية](docs/locales/README.ar.md) | [हिन्दी](docs/locales/README.hi.md) | [日本語](docs/locales/README.ja.md) | [Kiswahili](docs/locales/README.sw.md)
 
 DevFest Badge Creator turns attendee data into ready-to-print DevFest badges. It supports CSV, XLSX, and JSON files, previews the first valid badge, and downloads the generated badges as a ZIP.
 
 Live app: https://devfestbadge.web.app
+
+<img src="public/images/icon/badge_logo.png" width="400" alt="DevFest Badge Creator logo">
 
 ## What It Does
 
@@ -61,6 +66,16 @@ For testing, use query-string overrides:
 - `?usageTracking=off`
 
 Current counters are year-prefixed under `usage/badges`, including site visits, file uploads, uploaded rows, generated badge totals, and batches.
+
+### Realtime Database Security Rules
+
+Security rules are managed in `database.rules.json` and deployed via `firebase deploy --only database`.
+
+The rules enforce:
+- Global public read (`.read: true`) for stats display across all years.
+- Historical data protection (`$year >= '2026'`).
+- Path-scoped numeric writes for `siteVisits`, `fileUploads`, `uploadedRows`, `totalBadges`, and `batches`.
+- Monotonic increment checks (`newData.val() >= data.val()`) and non-numeric value blocking (`newData.isNumber()`).
 
 ## Local Development
 
