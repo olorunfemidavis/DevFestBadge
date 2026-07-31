@@ -1,93 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>#DevFest Badge Creator</title>
-    <meta name="description" content="DevFest 2025: Building Safe, Secure and Scalable Solutions with AI and Cloud. Empower developer communities to architect the future with practical AI and Google Cloud integration. Build innovative, scalable, and ethically sound applications for a technology-driven future that benefits everyone." />
-    <link rel="canonical" href="https://devfestbadge.web.app/" />
-    <link rel="shortcut icon" href="https://devfestbadge.web.app/images/icon/logo.png" />
-    <meta name="theme-color" content="#23457C" />
-    <meta name="date" content="2025-08-22" />
-    <meta name="author" content="Google Developer Group Ado-Ekiti" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devfestbadge.web.app/" />
-    <meta property="og:title" content="#DevFest Badge Creator" />
-    <meta property="og:description" content="DevFest 2025: Building Safe, Secure and Scalable Solutions with AI and Cloud. Empower developer communities to architect the future with practical AI and Google Cloud integration. Build innovative, scalable, and ethically sound applications for a technology-driven future that benefits everyone. Simply upload your badge data and download ready-to-print badges for #DevFest2025!" />
-    <meta property="og:image" content="https://devfestbadge.web.app/images/icon/badge_logo.png" />
-    <meta property="og:image:alt" content="DevFest Badge Examples" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="DevFest Badge Creator" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://devfestbadge.web.app/" />
-    <meta name="twitter:title" content="#DevFest Badge Creator" />
-    <meta name="twitter:description" content="DevFest 2025: Building Safe, Secure and Scalable Solutions with AI and Cloud. Empower developer communities to architect the future with practical AI and Google Cloud integration. Build innovative, scalable, and ethically sound applications for a technology-driven future that benefits everyone. Simply upload your badge data and download ready-to-print badges for #DevFest2025!" />
-    <meta name="twitter:image" content="https://devfestbadge.web.app/images/icon/badge_logo.png" />
-    <meta name="twitter:image:alt" content="DevFest Badge Example" />
-    <meta name="twitter:site" content="@GDGAdoEkiti" />
-    <meta name="twitter:creator" content="@olordavis" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Google+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css">
-    <!-- Add more CSS files if needed -->
-    <link rel="icon" type="image/png" href="https://devfestbadge.web.app/images/icon/logo.png">
-  </head>
-  <body>
-    <div id="app-container">
-      <header>
-        <h3>DevFest 2025 Badge Generator</h3>
-        <p>Generate event badges easily. Upload your attendee list.</p>
-      </header>
-      <section id="upload-section">
-        <label for="file-upload" class="upload-label">Supports CSV, XLSX, or JSON</label>
-        <input type="file" id="file-upload" accept=".csv,.xlsx,.json" />
-        <div id="badge-count-label" class="badge-count-label" style="margin-top:0.3rem; font-weight:500; color:var(--accent); text-align:center;"></div>
-      </section>
-      <section id="preview-section">
-        <h4>Badge Preview</h4>
-        <canvas id="badge-preview" width="400" height="600"></canvas>
-      </section>
-      <section id="actions-section">
-        <button id="download-btn" disabled>Download All Badges (ZIP)</button>
-        <div id="progress-container" style="display: none; width: 100%; background-color: #eee; border-radius: 5px; margin-top: 1rem;">
-          <div id="progress-bar" style="width: 0%; height: 20px; background-color: var(--accent); border-radius: 5px; text-align: center; color: white; line-height: 20px;"></div>
-        </div>
-      </section>
-    </div>
-    <footer class="footer themed-footer">
-      <button id="footer-toggle" class="footer-toggle">Instructions</button>
-      <div id="footer-content" class="footer-content" style="display:none;">
-        <div class="footer-main">
-          <div class="footer-row">
-            <span class="footer-heart">With <span style="color: red">❤</span> by</span>
-            <a class="footer-link" href="https://gdg.community.dev/gdg-ado-ekiti">GDG Ado-Ekiti</a>
-            <span class="footer-flag">🇳🇬</span>
-            <span class="footer-sep">|</span>
-            <a class="footer-link" target="_blank" href="https://sites.google.com/view/devfestavatarcreatorprivacy/home">Privacy</a>
-          </div>
-          <div class="footer-row">
-            <span id="year"></span> Stat:
-            <b><span id="countSpan"></span></b> badges.
-          </div>
-          <div class="footer-row">
-            <a href="https://github.com/olorunfemidavis/DevFestBadge" target="_blank">
-              <img src="./images/open_source.png" alt="Open source" class="open-source-logo" />
-            </a>
-          </div>
-          <div class="footer-row" style="margin-top:0.1rem;">
-            <section id="sample-section" style="text-align:center; margin:0; padding:0;">
-              <h3 style="margin:0.1rem 0 0.1rem 0;">Download Sample Files</h3>
-              <a href="files/sample.json" download class="sample-link">Sample JSON</a>
-              <a href="files/sample.csv" download class="sample-link">Sample CSV</a>
-              <a href="files/sample.xlsx" download class="sample-link">Sample XLSX</a>
-            </section>
-          </div>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevFest Badge Creator</title>
+  <meta name="description" content="Create ready-to-print DevFest 2026 badges from CSV, XLSX, or JSON attendee data." />
+  <link rel="canonical" href="https://devfestbadge.web.app/" />
+  <link rel="shortcut icon" href="https://devfestbadge.web.app/images/icon/logo.png" />
+  <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1e1e1e" media="(prefers-color-scheme: dark)" />
+  <meta name="date" content="2026-07-31" />
+  <meta name="author" content="Google Developer Group Ado-Ekiti" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://devfestbadge.web.app/" />
+  <meta property="og:title" content="DevFest Badge Creator" />
+  <meta property="og:description" content="Create ready-to-print DevFest 2026 badges from CSV, XLSX, or JSON attendee data." />
+  <meta property="og:image" content="https://devfestbadge.web.app/images/icon/badge_logo.png" />
+  <meta property="og:image:alt" content="DevFest Badge Creator" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="DevFest Badge Creator" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://devfestbadge.web.app/" />
+  <meta name="twitter:title" content="DevFest Badge Creator" />
+  <meta name="twitter:description" content="Create ready-to-print DevFest 2026 badges from CSV, XLSX, or JSON attendee data." />
+  <meta name="twitter:image" content="https://devfestbadge.web.app/images/icon/badge_logo.png" />
+  <meta name="twitter:image:alt" content="DevFest Badge Creator" />
+  <meta name="twitter:site" content="@GDGAdoEkiti" />
+  <meta name="twitter:creator" content="@olordavis" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" type="image/png" href="https://devfestbadge.web.app/images/icon/logo.png" />
+</head>
+<body>
+  <main class="badge-shell" id="app-container">
+    <section class="brand-panel" aria-label="DevFest badge creator">
+      <img class="brand-logo" src="images/icon/badge_logo.png" alt="DevFest Badge Creator" />
+      <div class="brand-copy">
+        <p class="eyebrow">DevFest 2026</p>
+        <h1>Badge Creator</h1>
+        <p class="lede">Create print badges from attendee data.</p>
       </div>
-    </footer>
-    <script src="js/site.js"></script>
-    <!-- Add more JS files if needed -->
-  </body>
+    </section>
+
+    <section class="workspace" aria-label="Badge generation workspace">
+      <section class="tool-panel upload-panel" aria-labelledby="upload-title">
+        <div class="panel-heading">
+          <p class="eyebrow">Data</p>
+          <h2 id="upload-title">Upload attendee file</h2>
+        </div>
+        <label for="file-upload" class="file-drop" id="file-drop">
+          <span class="file-drop-icon" aria-hidden="true">+</span>
+          <span class="file-drop-text">Choose CSV, XLSX, or JSON</span>
+          <span class="file-drop-name" id="file-name">No file selected</span>
+        </label>
+        <input type="file" id="file-upload" accept=".csv,.xlsx,.json" />
+        <div class="status-line" id="badge-count-label" aria-live="polite"></div>
+        <div class="validation-summary" id="validation-summary" hidden aria-live="polite"></div>
+      </section>
+
+      <section class="tool-panel preview-panel" aria-labelledby="preview-title">
+        <div class="panel-heading compact-heading">
+          <div>
+            <p class="eyebrow">Preview</p>
+            <h2 id="preview-title">First badge</h2>
+          </div>
+          <span class="badge-type-pill" id="preview-type">General</span>
+        </div>
+        <div class="canvas-frame">
+          <canvas id="badge-preview" width="1310" height="2048" aria-label="Badge preview"></canvas>
+        </div>
+      </section>
+
+      <section class="tool-panel actions-panel" aria-labelledby="actions-title">
+        <div id="export-section" hidden>
+          <div class="panel-heading">
+            <p class="eyebrow">Export</p>
+            <h2 id="actions-title">Download badges</h2>
+          </div>
+          <button id="download-btn" class="primary-action" disabled type="button">Download ZIP</button>
+          <div id="progress-container" class="progress-container" hidden>
+            <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
+          </div>
+        </div>
+        <p class="stat-line"><span id="year"></span> community count: <strong><span id="countSpan">0</span></strong> badges</p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer themed-footer">
+    <div class="footer-inner">
+      <p>
+        Built with
+        <svg class="love-mark" viewBox="0 0 32 28" role="img" aria-label="love for open source" focusable="false">
+          <defs>
+            <clipPath id="love-mark-clip">
+              <path d="M16 25.5C9.2 20.1 4 15.7 4 9.6 4 5.9 6.8 3 10.4 3c2.1 0 4.1 1 5.6 2.7C17.5 4 19.5 3 21.6 3 25.2 3 28 5.9 28 9.6c0 6.1-5.2 10.5-12 15.9Z" />
+            </clipPath>
+          </defs>
+          <g clip-path="url(#love-mark-clip)">
+            <rect class="love-mark-blue" x="0" y="0" width="16" height="14" />
+            <rect class="love-mark-red" x="16" y="0" width="16" height="14" />
+            <rect class="love-mark-yellow" x="0" y="14" width="16" height="14" />
+            <rect class="love-mark-green" x="16" y="14" width="16" height="14" />
+          </g>
+          <path class="love-mark-outline" d="M16 25.5C9.2 20.1 4 15.7 4 9.6 4 5.9 6.8 3 10.4 3c2.1 0 4.1 1 5.6 2.7C17.5 4 19.5 3 21.6 3 25.2 3 28 5.9 28 9.6c0 6.1-5.2 10.5-12 15.9Z" />
+        </svg>
+        by
+        <a href="https://g.dev/olorunfemidavis" target="_blank" rel="noopener">Olorunfemi Davis</a>
+        and
+        <a href="https://gdg.community.dev/gdg-ado-ekiti" target="_blank" rel="noopener">GDG Ado-Ekiti</a>.
+      </p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a class="github-link" href="https://github.com/olorunfemidavis/DevFestBadge" target="_blank" rel="noopener" aria-label="View source on GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.45 9.45 0 0 1 12 7.02c.85 0 1.7.11 2.5.33 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.67-4.57 4.92.36.31.68.92.68 1.86v2.58c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+          </svg>
+          GitHub
+        </a>
+        <a href="files/sample.csv" download>Sample CSV</a>
+        <a href="files/sample.xlsx" download>Sample XLSX</a>
+        <a href="files/sample.json" download>Sample JSON</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBvuBuQ37VAwK14ticjWRekVJt5XRFehCY",
+      authDomain: "devfestbadge.firebaseapp.com",
+      databaseURL: "https://devfestbadge-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "devfestbadge",
+      storageBucket: "devfestbadge.firebasestorage.app",
+      messagingSenderId: "59144715036",
+      appId: "1:59144715036:web:31d0bdcb029a0ffcda58d9",
+      measurementId: "G-9ZGCC203FE"
+    };
+    if (window.firebase && typeof firebase.initializeApp === "function" && !firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+  </script>
+  <script src="js/firebase_usage.js"></script>
+  <script src="js/fileparse.js"></script>
+  <script src="js/badge_renderer.js"></script>
+  <script src="js/site.js"></script>
+</body>
 </html>
+
