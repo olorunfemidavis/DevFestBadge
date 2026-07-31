@@ -1,7 +1,7 @@
-﻿.badge-shell {
+.badge-shell {
   width: min(1180px, calc(100vw - 32px));
   margin: 0 auto;
-  padding: 32px 0 112px;
+  padding: 16px 0 64px;
 }
 
 .brand-panel,
@@ -15,11 +15,11 @@
 
 .brand-panel {
   display: grid;
-  grid-template-columns: minmax(220px, 420px) 1fr;
-  gap: 28px;
+  grid-template-columns: minmax(140px, 260px) 1fr;
+  gap: 20px;
   align-items: center;
-  min-height: 220px;
-  padding: 28px;
+  min-height: 0;
+  padding: 16px 24px;
   position: relative;
   overflow: hidden;
 }
@@ -34,24 +34,24 @@
 }
 
 .brand-panel::before {
-  width: 128px;
-  height: 128px;
-  right: 42px;
-  top: -42px;
+  width: 96px;
+  height: 96px;
+  right: 28px;
+  top: -32px;
   background: var(--red-500);
 }
 
 .brand-panel::after {
-  width: 96px;
-  height: 96px;
-  left: -28px;
-  bottom: -24px;
+  width: 72px;
+  height: 72px;
+  left: -20px;
+  bottom: -20px;
   background: var(--blue-500);
 }
 
 .brand-logo {
-  width: min(100%, 420px);
-  max-height: 190px;
+  width: min(100%, 260px);
+  max-height: 110px;
   object-fit: contain;
   justify-self: center;
   position: relative;
@@ -71,30 +71,30 @@
 }
 
 .brand-copy h1 {
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
 }
 
 .lede {
   max-width: 36rem;
-  margin: 18px 0 0;
+  margin: 8px 0 0;
   color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.55;
+  font-size: 0.95rem;
+  line-height: 1.45;
 }
 
 .workspace {
   display: grid;
-  grid-template-columns: minmax(260px, 0.92fr) minmax(360px, 1.18fr);
+  grid-template-columns: minmax(260px, 0.92fr) minmax(320px, 1.08fr);
   grid-template-areas:
     "upload preview"
     "actions preview";
-  gap: 18px;
-  margin-top: 18px;
+  gap: 14px;
+  margin-top: 14px;
   align-items: start;
 }
 
 .tool-panel {
-  padding: 24px;
+  padding: 18px 20px;
 }
 
 .upload-panel { grid-area: upload; }

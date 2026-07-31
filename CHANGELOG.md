@@ -4,6 +4,9 @@ All notable changes to DevFest Badge Creator are documented here.
 
 ## [Unreleased]
 
+- Hidden Preview panel section on mobile view (`max-width: 900px`).
+- Compacted top brand header and reduced preview canvas frame width (`280px`) so the default landing page fits above the fold on desktop screens.
+- Updated public sample files (`sample.csv`, `sample.json`, `sample.xlsx`)
 - Hidden Export heading and Download ZIP controls until a valid attendee file is uploaded, while keeping the community count stat line visible at all times.
 - Configured official Firebase Realtime Database SDK configuration (`devfestbadge`) in `index.html`.
 - Deferred `fileUploads` and `uploadedRows` counter increments so they register only when a badge download is initiated.

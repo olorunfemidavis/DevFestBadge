@@ -1,4 +1,4 @@
-﻿@media (max-width: 900px) {
+@media (max-width: 900px) {
   .badge-shell {
     width: min(100vw - 24px, 720px);
     padding-top: 18px;
@@ -13,8 +13,11 @@
   .workspace {
     grid-template-areas:
       "upload"
-      "preview"
       "actions";
+  }
+
+  .preview-panel {
+    display: none;
   }
 
   .brand-panel {

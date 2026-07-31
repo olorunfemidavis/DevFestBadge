@@ -94,9 +94,9 @@
 }
 
 .canvas-frame {
-  width: min(100%, 520px);
+  width: min(100%, 280px);
   margin: 0 auto;
-  padding: 14px;
+  padding: 8px;
   background: var(--panel-strong);
   border: 2px solid var(--line);
 }
