@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   var REQUIRED_FIELDS = ['location', 'firstname', 'lastname'];
   var OPTIONAL_FIELDS = ['title', 'organization', 'participationType'];
   var ALL_FIELDS = REQUIRED_FIELDS.concat(OPTIONAL_FIELDS);
@@ -6,6 +6,7 @@
   var xlsxPromise = null;
 
   var FIELD_ALIASES = {
+    // English & Default
     firstName: 'firstname',
     first_name: 'firstname',
     first: 'firstname',
@@ -24,7 +25,96 @@
     gdg: 'location',
     type: 'participationType',
     participation: 'participationType',
-    badgeType: 'participationType'
+    badgeType: 'participationType',
+
+    // Yoruba (Èdè Yorùbá)
+    oruko: 'firstname',
+    orukofirst: 'firstname',
+    orukolast: 'lastname',
+    ibo: 'location',
+    aye: 'location',
+    ipo: 'title',
+    akori: 'title',
+    egbe: 'organization',
+
+    // Spanish (Español)
+    nombre: 'firstname',
+    primerNombre: 'firstname',
+    apellido: 'lastname',
+    apellidos: 'lastname',
+    ciudad: 'location',
+    empresa: 'organization',
+    cargo: 'title',
+    puesto: 'title',
+    rol: 'title',
+    tipo: 'participationType',
+    tipoParticipacion: 'participationType',
+
+    // French (Français)
+    prenom: 'firstname',
+    prénom: 'firstname',
+    nom: 'lastname',
+    nomDeFamille: 'lastname',
+    ville: 'location',
+    societe: 'organization',
+    société: 'organization',
+    entreprise: 'organization',
+    titre: 'title',
+    poste: 'title',
+
+    // Portuguese (Português)
+    nome: 'firstname',
+    primeiroNome: 'firstname',
+    primeiro_nome: 'firstname',
+    sobrenome: 'lastname',
+    apelido: 'lastname',
+    cidade: 'location',
+    empresa: 'organization',
+    organizacao: 'organization',
+    organização: 'organization',
+    cargo: 'title',
+    funcao: 'title',
+    função: 'title',
+    tipo: 'participationType',
+
+    // German (Deutsch)
+    vorname: 'firstname',
+    nachname: 'lastname',
+    familienname: 'lastname',
+    stadt: 'location',
+    ort: 'location',
+    firma: 'organization',
+    unternehmen: 'organization',
+    titel: 'title',
+    typ: 'participationType',
+    art: 'participationType',
+
+    // Turkish (Türkçe)
+    ad: 'firstname',
+    isim: 'firstname',
+    soyad: 'lastname',
+    soyisim: 'lastname',
+    sehir: 'location',
+    şehir: 'location',
+    sirket: 'organization',
+    şirket: 'organization',
+    unvan: 'title',
+    ünvan: 'title',
+    gorev: 'title',
+    görev: 'title',
+    tur: 'participationType',
+    tür: 'participationType',
+
+    // Swahili (Kiswahili)
+    jinakwanza: 'firstname',
+    jinapili: 'lastname',
+    mahali: 'location',
+    mji: 'location',
+    shirika: 'organization',
+    kampuni: 'organization',
+    kazi: 'title',
+    cheo: 'title',
+    aina: 'participationType'
   };
 
   function loadScript(src, globalName) {
@@ -155,7 +245,12 @@
     if (!type) return 'general';
     if (PARTICIPATION_TYPES.indexOf(type) !== -1) return type;
 
-    warnings.push('Row ' + rowNumber + ': unknown participationType "' + cleanValue(value) + '"; using General.');
+    var raw = cleanValue(value);
+    var msg = new String('Row ' + rowNumber + ': unknown participationType "' + raw + '"; using General.');
+    msg.code = 'unknown_type';
+    msg.rowNumber = rowNumber;
+    msg.rawType = raw;
+    warnings.push(msg);
     return 'general';
   }
 
@@ -174,7 +269,13 @@
       });
 
       REQUIRED_FIELDS.forEach(function (field) {
-        if (!attendee[field]) errors.push('Row ' + rowNumber + ': missing ' + field + '.');
+        if (!attendee[field]) {
+          var msg = new String('Row ' + rowNumber + ': missing ' + field + '.');
+          msg.code = 'missing_field';
+          msg.rowNumber = rowNumber;
+          msg.field = field;
+          errors.push(msg);
+        }
       });
 
       if (!attendee.firstname || !attendee.lastname || !attendee.location) return;

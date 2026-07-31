@@ -1,0 +1,52 @@
+{
+  "app_title": "Creador de Credenciales",
+  "app_tagline": "Crea credenciales impresas a partir de datos de asistentes.",
+  "data_heading": "Datos",
+  "upload_title": "Subir archivo de asistentes",
+  "choose_file_prompt": "Elige CSV, XLSX o JSON",
+  "no_file_selected": "Ningún archivo seleccionado",
+  "preview_heading": "Vista previa",
+  "preview_title": "Primera credencial",
+  "export_heading": "Exportar",
+  "actions_title": "Descargar credenciales",
+  "download_zip": "Descargar ZIP",
+  "community_count": "Conteo de la comunidad {year}: {count} credenciales",
+  "sample_csv": "Ejemplo CSV",
+  "sample_xlsx": "Ejemplo XLSX",
+  "sample_json": "Ejemplo JSON",
+  "language_selector_label": "Idioma",
+
+  "footer_built_with": "Hecho con",
+  "footer_by": "por",
+  "footer_and": "y",
+
+  "type_general": "General",
+  "type_speaker": "Orador",
+  "type_staff": "Personal",
+  "type_attendee": "Asistente",
+
+  "stat_prefix": "Conteo de la comunidad {year}:",
+  "stat_suffix": "credenciales",
+
+  "field_firstname": "nombre",
+  "field_lastname": "apellido",
+  "field_location": "ubicación",
+
+  "status_initial": "Listo",
+  "status_reading": "Leyendo archivo...",
+  "status_no_valid_rows": "No se encontraron filas válidas para credenciales.",
+  "status_rendering_first": "Generando primera credencial...",
+  "status_ready_count": "{count} credenciales listas de {rawCount} filas.",
+  "status_preparing_zip": "Preparando archivo ZIP...",
+  "status_generating_progress": "Generada {current} de {total} credenciales...",
+  "status_compressing_zip": "Comprimiendo archivo ZIP...",
+  "status_downloaded_count": "{total} credenciales descargadas.",
+  "status_download_failed": "Error al descargar credenciales.",
+  "status_could_not_parse": "No se pudo procesar este archivo.",
+  "status_could_not_init": "No se pudo inicializar el creador de credenciales.",
+
+  "validation_issues_skipped": "{count} problemas de filas omitidos",
+  "validation_warnings_applied": "{count} advertencias aplicadas",
+  "val_missing_field": "Fila {rowNumber}: falta {field}.",
+  "val_unknown_type": "Fila {rowNumber}: tipo de participación desconocido \"{rawType}\"; usando {fallback}."
+}

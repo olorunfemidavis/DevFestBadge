@@ -1,0 +1,52 @@
+{
+  "app_title": "منشئ البطاقات",
+  "app_tagline": "إنشاء بطاقات مطبوعة من بيانات الحضور.",
+  "data_heading": "البيانات",
+  "upload_title": "تحميل ملف الحضور",
+  "choose_file_prompt": "اختر CSV أو XLSX أو JSON",
+  "no_file_selected": "لم يتم تحديد أي ملف",
+  "preview_heading": "معاينة",
+  "preview_title": "البطاقة الأولى",
+  "export_heading": "تصدير",
+  "actions_title": "تنزيل البطاقات",
+  "download_zip": "تنزيل ZIP",
+  "community_count": "عداد مجتمع {year}: {count} بطاقة",
+  "sample_csv": "عينة CSV",
+  "sample_xlsx": "عينة XLSX",
+  "sample_json": "عينة JSON",
+  "language_selector_label": "اللغة",
+
+  "footer_built_with": "صنع بـ",
+  "footer_by": "بواسطة",
+  "footer_and": "و",
+
+  "type_general": "عام",
+  "type_speaker": "متحدث",
+  "type_staff": "طاقم العمل",
+  "type_attendee": "حاضر",
+
+  "stat_prefix": "عداد مجتمع {year}:",
+  "stat_suffix": "بطاقة",
+
+  "field_firstname": "الاسم الأول",
+  "field_lastname": "اسم العائلة",
+  "field_location": "الموقع",
+
+  "status_initial": "جاهز",
+  "status_reading": "جاري قراءة الملف...",
+  "status_no_valid_rows": "لم يتم العثور على صفوف بطاقات صالحة.",
+  "status_rendering_first": "جاري إنشاء البطاقة الأولى...",
+  "status_ready_count": "{count} بطاقة جاهزة من أصل {rawCount} صف.",
+  "status_preparing_zip": "جاري تحضير ملف ZIP...",
+  "status_generating_progress": "تم إنشاء {current} من أصل {total} بطاقة...",
+  "status_compressing_zip": "جاري ضغط ملف ZIP...",
+  "status_downloaded_count": "تم تنزيل {total} بطاقة.",
+  "status_download_failed": "فشل تنزيل البطاقات.",
+  "status_could_not_parse": "تعذر تحليل هذا الملف.",
+  "status_could_not_init": "تعذر بدء منشئ البطاقات.",
+
+  "validation_issues_skipped": "تم تخطي {count} مشكلة في الصفوف",
+  "validation_warnings_applied": "تم تطبيق {count} تحذير",
+  "val_missing_field": "الصف {rowNumber}: {field} مفقود.",
+  "val_unknown_type": "الصف {rowNumber}: نوع مشاركة غير معروف \"{rawType}\"؛ تم استخدام {fallback}."
+}

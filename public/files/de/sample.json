@@ -1,0 +1,82 @@
+[
+  {
+    "stadt": "GDG Ado-Ekiti",
+    "vorname": "David",
+    "nachname": "Oluwabusayo",
+    "titel": "GDG Organizer",
+    "firma": "GDG Ado-Ekiti",
+    "typ": "Staff"
+  },
+  {
+    "stadt": "GDG Phoenix",
+    "vorname": "Sheldon",
+    "nachname": "McGee",
+    "titel": "Community Lead",
+    "firma": "GDG Phoenix",
+    "typ": "Speaker"
+  },
+  {
+    "stadt": "GDG El Alto",
+    "vorname": "Luis Fernando",
+    "nachname": "Callisaya",
+    "titel": "Lead Organizer",
+    "firma": "GDG El Alto",
+    "typ": "General"
+  },
+  {
+    "stadt": "GDG Delta University",
+    "vorname": "Mohamed",
+    "nachname": "Samy",
+    "titel": "Team Manager",
+    "firma": "Bitbang",
+    "typ": "Attendee"
+  },
+  {
+    "stadt": "GDG Lucknow",
+    "vorname": "Abhishek",
+    "nachname": "Sahu",
+    "titel": "Community Organizer",
+    "firma": "GDG Lucknow",
+    "typ": "Speaker"
+  },
+  {
+    "stadt": "GDG Abakaliki",
+    "vorname": "Victor",
+    "nachname": "Ekeghe Mba",
+    "titel": "Community Organizer",
+    "firma": "GDG Abakaliki",
+    "typ": "Attendee"
+  },
+  {
+    "stadt": "GDG London",
+    "vorname": "Florid",
+    "nachname": "Maclean",
+    "titel": "GDG Organizer",
+    "firma": "Catch The Event",
+    "typ": "Speaker"
+  },
+  {
+    "stadt": "GDG Tokyo",
+    "vorname": "Naoya",
+    "nachname": "Yoshimura",
+    "titel": "GDG Organizer",
+    "firma": "GDG Tokyo",
+    "typ": "General"
+  },
+  {
+    "stadt": "GDG São Paulo",
+    "vorname": "Fabí",
+    "nachname": "Canedo",
+    "titel": "WTM Ambassador",
+    "firma": "GDG São Paulo",
+    "typ": "Staff"
+  },
+  {
+    "stadt": "GDG Sydney",
+    "vorname": "Olayinka Peter",
+    "nachname": "Oluwafemi",
+    "titel": "GDG Organizer",
+    "firma": "GDG Sydney",
+    "typ": "Attendee"
+  }
+]

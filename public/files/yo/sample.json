@@ -1,0 +1,82 @@
+[
+  {
+    "ibo": "GDG Ado-Ekiti",
+    "oruko": "David",
+    "orukolast": "Oluwabusayo",
+    "ipo": "GDG Organizer",
+    "egbe": "GDG Ado-Ekiti",
+    "tipo": "Staff"
+  },
+  {
+    "ibo": "GDG Phoenix",
+    "oruko": "Sheldon",
+    "orukolast": "McGee",
+    "ipo": "Community Lead",
+    "egbe": "GDG Phoenix",
+    "tipo": "Speaker"
+  },
+  {
+    "ibo": "GDG El Alto",
+    "oruko": "Luis Fernando",
+    "orukolast": "Callisaya",
+    "ipo": "Lead Organizer",
+    "egbe": "GDG El Alto",
+    "tipo": "General"
+  },
+  {
+    "ibo": "GDG Delta University",
+    "oruko": "Mohamed",
+    "orukolast": "Samy",
+    "ipo": "Team Manager",
+    "egbe": "Bitbang",
+    "tipo": "Attendee"
+  },
+  {
+    "ibo": "GDG Lucknow",
+    "oruko": "Abhishek",
+    "orukolast": "Sahu",
+    "ipo": "Community Organizer",
+    "egbe": "GDG Lucknow",
+    "tipo": "Speaker"
+  },
+  {
+    "ibo": "GDG Abakaliki",
+    "oruko": "Victor",
+    "orukolast": "Ekeghe Mba",
+    "ipo": "Community Organizer",
+    "egbe": "GDG Abakaliki",
+    "tipo": "Attendee"
+  },
+  {
+    "ibo": "GDG London",
+    "oruko": "Florid",
+    "orukolast": "Maclean",
+    "ipo": "GDG Organizer",
+    "egbe": "Catch The Event",
+    "tipo": "Speaker"
+  },
+  {
+    "ibo": "GDG Tokyo",
+    "oruko": "Naoya",
+    "orukolast": "Yoshimura",
+    "ipo": "GDG Organizer",
+    "egbe": "GDG Tokyo",
+    "tipo": "General"
+  },
+  {
+    "ibo": "GDG São Paulo",
+    "oruko": "Fabí",
+    "orukolast": "Canedo",
+    "ipo": "WTM Ambassador",
+    "egbe": "GDG São Paulo",
+    "tipo": "Staff"
+  },
+  {
+    "ibo": "GDG Sydney",
+    "oruko": "Olayinka Peter",
+    "orukolast": "Oluwafemi",
+    "ipo": "GDG Organizer",
+    "egbe": "GDG Sydney",
+    "tipo": "Attendee"
+  }
+]

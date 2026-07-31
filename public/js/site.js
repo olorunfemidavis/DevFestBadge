@@ -12,18 +12,43 @@
   var countSpan = document.getElementById('countSpan');
   var yearSpan = document.getElementById('year');
   var exportSection = document.getElementById('export-section');
+  var langSelect = document.getElementById('language-select');
 
   var attendeeList = [];
+  var lastParseResult = null;
   var hasTrackedUploadForCurrentFile = false;
   var badgeConfig = null;
   var jsZipPromise = null;
+  var currentStatusState = null;
 
-  function setStatus(message) {
-    countLabel.textContent = message || '';
+  function t(key, params) {
+    if (window.i18n && typeof window.i18n.t === 'function') {
+      return window.i18n.t(key, params);
+    }
+    return key;
   }
 
+  function setStatusKey(key, params) {
+    currentStatusState = { key: key, params: params };
+    countLabel.textContent = key ? t(key, params) : '';
+  }
+
+  function refreshCurrentStatus() {
+    if (currentStatusState && currentStatusState.key) {
+      countLabel.textContent = t(currentStatusState.key, currentStatusState.params);
+    }
+  }
+
+  var currentPreviewType = 'general';
+
   function setPreviewType(type) {
-    previewType.textContent = titleCase(window.badgeRenderer.normalizeTemplateType(type || 'general'));
+    currentPreviewType = window.badgeRenderer.normalizeTemplateType(type || 'general');
+    refreshPreviewTypePill();
+  }
+
+  function refreshPreviewTypePill() {
+    var key = 'type_' + currentPreviewType;
+    previewType.textContent = t(key);
   }
 
   function titleCase(value) {
@@ -43,10 +68,33 @@
     document.body.classList.toggle('is-busy', isBusy);
   }
 
+  function formatValidationItem(item) {
+    if (item && item.code === 'missing_field') {
+      var fieldLabel = t('field_' + item.field) || item.field;
+      return t('val_missing_field', { rowNumber: item.rowNumber, field: fieldLabel });
+    }
+    if (item && item.code === 'unknown_type') {
+      var fallbackLabel = t('type_general');
+      return t('val_unknown_type', { rowNumber: item.rowNumber, rawType: item.rawType, fallback: fallbackLabel });
+    }
+    return String(item);
+  }
+
   function summarizeValidation(result) {
+    lastParseResult = result;
+    if (!result) {
+      validationSummary.hidden = true;
+      validationSummary.innerHTML = '';
+      return;
+    }
+
     var parts = [];
-    if (result.errors.length) parts.push('<strong>' + result.errors.length + ' row issue' + (result.errors.length === 1 ? '' : 's') + '</strong> skipped');
-    if (result.warnings.length) parts.push('<strong>' + result.warnings.length + ' warning' + (result.warnings.length === 1 ? '' : 's') + '</strong> applied');
+    if (result.errors && result.errors.length) {
+      parts.push('<strong>' + t('validation_issues_skipped', { count: result.errors.length }) + '</strong>');
+    }
+    if (result.warnings && result.warnings.length) {
+      parts.push('<strong>' + t('validation_warnings_applied', { count: result.warnings.length }) + '</strong>');
+    }
 
     if (!parts.length) {
       validationSummary.hidden = true;
@@ -54,8 +102,12 @@
       return;
     }
 
-    var examples = result.errors.concat(result.warnings).slice(0, 5).map(escapeHtml).join('<br>');
-    validationSummary.innerHTML = parts.join(' and ') + '.<br>' + examples;
+    var examples = result.errors.concat(result.warnings)
+      .slice(0, 5)
+      .map(function (item) { return escapeHtml(formatValidationItem(item)); })
+      .join('<br>');
+
+    validationSummary.innerHTML = parts.join(' &amp; ') + '.<br>' + examples;
     validationSummary.hidden = false;
   }
 
@@ -103,7 +155,12 @@
   }
 
   async function loadInitialState() {
-    yearSpan.textContent = new Date().getFullYear();
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+    if (window.i18n && typeof window.i18n.init === 'function') {
+      await window.i18n.init();
+    }
+
     window.trackBadgeSiteVisit();
     window.readBadgeTotalCount(function (count) {
       countSpan.textContent = count;
@@ -118,7 +175,7 @@
     if (!file) return;
 
     fileName.textContent = file.name;
-    setStatus('Reading file...');
+    setStatusKey('status_reading');
     validationSummary.hidden = true;
     downloadBtn.disabled = true;
     if (exportSection) exportSection.hidden = true;
@@ -130,23 +187,23 @@
       summarizeValidation(result);
 
       if (!attendeeList.length) {
-        setStatus('No valid badge rows found.');
+        setStatusKey('status_no_valid_rows');
         if (exportSection) exportSection.hidden = true;
         await window.badgeRenderer.renderBadge(badgePreview, null, badgeConfig);
         setPreviewType('general');
         return;
       }
 
-      setStatus('Rendering first badge...');
+      setStatusKey('status_rendering_first');
       await window.badgeRenderer.renderBadge(badgePreview, attendeeList[0], badgeConfig);
       setPreviewType(attendeeList[0].participationType);
       if (exportSection) exportSection.hidden = false;
       downloadBtn.disabled = false;
-      setStatus(attendeeList.length + ' badge' + (attendeeList.length === 1 ? '' : 's') + ' ready from ' + result.rawCount + ' row' + (result.rawCount === 1 ? '' : 's') + '.');
+      setStatusKey('status_ready_count', { count: attendeeList.length, rawCount: result.rawCount });
     } catch (error) {
       attendeeList = [];
       if (exportSection) exportSection.hidden = true;
-      setStatus('Could not parse this file.');
+      setStatusKey('status_could_not_parse');
       validationSummary.innerHTML = escapeHtml(error.message || error);
       validationSummary.hidden = false;
       await window.badgeRenderer.renderBadge(badgePreview, null, badgeConfig);
@@ -160,7 +217,7 @@
     setBusy(true);
     progressContainer.hidden = false;
     setProgress(0, '0%');
-    setStatus('Preparing ZIP...');
+    setStatusKey('status_preparing_zip');
 
     try {
       var JSZip = await ensureJsZip();
@@ -181,12 +238,12 @@
         if ((i + 1) % 5 === 0 || i + 1 === total) {
           var progress = Math.round(((i + 1) / total) * 100);
           setProgress(progress, progress + '%');
-          setStatus('Generated ' + (i + 1) + ' of ' + total + ' badges...');
+          setStatusKey('status_generating_progress', { current: i + 1, total: total });
           await nextFrame();
         }
       }
 
-      setStatus('Compressing ZIP...');
+      setStatusKey('status_compressing_zip');
       var zipBlob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } }, function (metadata) {
         setProgress(Math.round(metadata.percent), Math.round(metadata.percent) + '%');
       });
@@ -200,7 +257,7 @@
       link.remove();
       setTimeout(function () { URL.revokeObjectURL(url); }, 30000);
 
-      setStatus(total + ' badge' + (total === 1 ? '' : 's') + ' downloaded.');
+      setStatusKey('status_downloaded_count', { total: total });
       if (!hasTrackedUploadForCurrentFile) {
         window.trackBadgeFileUpload(total);
         hasTrackedUploadForCurrentFile = true;
@@ -209,7 +266,7 @@
         countSpan.textContent = newCount;
       });
     } catch (error) {
-      setStatus('Badge download failed.');
+      setStatusKey('status_download_failed');
       validationSummary.innerHTML = escapeHtml(error.message || error);
       validationSummary.hidden = false;
     } finally {
@@ -243,12 +300,27 @@
 
   downloadBtn.addEventListener('click', downloadAllBadges);
 
+  if (langSelect) {
+    langSelect.addEventListener('change', function (e) {
+      if (window.i18n && typeof window.i18n.setLanguage === 'function') {
+        window.i18n.setLanguage(e.target.value);
+      }
+    });
+  }
+
+  window.addEventListener('languagechange', function () {
+    refreshCurrentStatus();
+    refreshPreviewTypePill();
+    if (lastParseResult) {
+      summarizeValidation(lastParseResult);
+    }
+  });
+
   window.addEventListener('DOMContentLoaded', function () {
     loadInitialState().catch(function (error) {
-      setStatus('Could not initialize badge creator.');
+      setStatusKey('status_could_not_init');
       validationSummary.textContent = error.message || error;
       validationSummary.hidden = false;
     });
   });
 })();
-

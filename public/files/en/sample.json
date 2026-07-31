@@ -1,0 +1,82 @@
+[
+  {
+    "location": "GDG Ado-Ekiti",
+    "firstname": "David",
+    "lastname": "Oluwabusayo",
+    "title": "GDG Organizer",
+    "organization": "GDG Ado-Ekiti",
+    "participationType": "Staff"
+  },
+  {
+    "location": "GDG Phoenix",
+    "firstname": "Sheldon",
+    "lastname": "McGee",
+    "title": "Community Lead",
+    "organization": "GDG Phoenix",
+    "participationType": "Speaker"
+  },
+  {
+    "location": "GDG El Alto",
+    "firstname": "Luis Fernando",
+    "lastname": "Callisaya",
+    "title": "Lead Organizer",
+    "organization": "GDG El Alto",
+    "participationType": "General"
+  },
+  {
+    "location": "GDG Delta University",
+    "firstname": "Mohamed",
+    "lastname": "Samy",
+    "title": "Team Manager",
+    "organization": "Bitbang",
+    "participationType": "Attendee"
+  },
+  {
+    "location": "GDG Lucknow",
+    "firstname": "Abhishek",
+    "lastname": "Sahu",
+    "title": "Community Organizer",
+    "organization": "GDG Lucknow",
+    "participationType": "Speaker"
+  },
+  {
+    "location": "GDG Abakaliki",
+    "firstname": "Victor",
+    "lastname": "Ekeghe Mba",
+    "title": "Community Organizer",
+    "organization": "GDG Abakaliki",
+    "participationType": "Attendee"
+  },
+  {
+    "location": "GDG London",
+    "firstname": "Florid",
+    "lastname": "Maclean",
+    "title": "GDG Organizer",
+    "organization": "Catch The Event",
+    "participationType": "Speaker"
+  },
+  {
+    "location": "GDG Tokyo",
+    "firstname": "Naoya",
+    "lastname": "Yoshimura",
+    "title": "GDG Organizer",
+    "organization": "GDG Tokyo",
+    "participationType": "General"
+  },
+  {
+    "location": "GDG São Paulo",
+    "firstname": "Fabí",
+    "lastname": "Canedo",
+    "title": "WTM Ambassador",
+    "organization": "GDG São Paulo",
+    "participationType": "Staff"
+  },
+  {
+    "location": "GDG Sydney",
+    "firstname": "Olayinka Peter",
+    "lastname": "Oluwafemi",
+    "title": "GDG Organizer",
+    "organization": "GDG Sydney",
+    "participationType": "Attendee"
+  }
+]
