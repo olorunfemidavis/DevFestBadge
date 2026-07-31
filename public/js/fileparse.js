@@ -63,13 +63,19 @@
     poste: 'title',
 
     // Portuguese (Português)
+    nome: 'firstname',
+    primeiroNome: 'firstname',
+    primeiro_nome: 'firstname',
     sobrenome: 'lastname',
     apelido: 'lastname',
     cidade: 'location',
+    empresa: 'organization',
     organizacao: 'organization',
     organização: 'organization',
+    cargo: 'title',
     funcao: 'title',
     função: 'title',
+    tipo: 'participationType',
 
     // German (Deutsch)
     vorname: 'firstname',
@@ -80,6 +86,8 @@
     firma: 'organization',
     unternehmen: 'organization',
     titel: 'title',
+    typ: 'participationType',
+    art: 'participationType',
 
     // Turkish (Türkçe)
     ad: 'firstname',

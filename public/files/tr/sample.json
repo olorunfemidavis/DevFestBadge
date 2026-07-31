@@ -1,0 +1,82 @@
+[
+  {
+    "sehir": "GDG Ado-Ekiti",
+    "ad": "David",
+    "soyad": "Oluwabusayo",
+    "unvan": "GDG Organizer",
+    "sirket": "GDG Ado-Ekiti",
+    "tur": "Staff"
+  },
+  {
+    "sehir": "GDG Phoenix",
+    "ad": "Sheldon",
+    "soyad": "McGee",
+    "unvan": "Community Lead",
+    "sirket": "GDG Phoenix",
+    "tur": "Speaker"
+  },
+  {
+    "sehir": "GDG El Alto",
+    "ad": "Luis Fernando",
+    "soyad": "Callisaya",
+    "unvan": "Lead Organizer",
+    "sirket": "GDG El Alto",
+    "tur": "General"
+  },
+  {
+    "sehir": "GDG Delta University",
+    "ad": "Mohamed",
+    "soyad": "Samy",
+    "unvan": "Team Manager",
+    "sirket": "Bitbang",
+    "tur": "Attendee"
+  },
+  {
+    "sehir": "GDG Lucknow",
+    "ad": "Abhishek",
+    "soyad": "Sahu",
+    "unvan": "Community Organizer",
+    "sirket": "GDG Lucknow",
+    "tur": "Speaker"
+  },
+  {
+    "sehir": "GDG Abakaliki",
+    "ad": "Victor",
+    "soyad": "Ekeghe Mba",
+    "unvan": "Community Organizer",
+    "sirket": "GDG Abakaliki",
+    "tur": "Attendee"
+  },
+  {
+    "sehir": "GDG London",
+    "ad": "Florid",
+    "soyad": "Maclean",
+    "unvan": "GDG Organizer",
+    "sirket": "Catch The Event",
+    "tur": "Speaker"
+  },
+  {
+    "sehir": "GDG Tokyo",
+    "ad": "Naoya",
+    "soyad": "Yoshimura",
+    "unvan": "GDG Organizer",
+    "sirket": "GDG Tokyo",
+    "tur": "General"
+  },
+  {
+    "sehir": "GDG São Paulo",
+    "ad": "Fabí",
+    "soyad": "Canedo",
+    "unvan": "WTM Ambassador",
+    "sirket": "GDG São Paulo",
+    "tur": "Staff"
+  },
+  {
+    "sehir": "GDG Sydney",
+    "ad": "Olayinka Peter",
+    "soyad": "Oluwafemi",
+    "unvan": "GDG Organizer",
+    "sirket": "GDG Sydney",
+    "tur": "Attendee"
+  }
+]

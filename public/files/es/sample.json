@@ -1,0 +1,82 @@
+[
+  {
+    "ciudad": "GDG Ado-Ekiti",
+    "nombre": "David",
+    "apellido": "Oluwabusayo",
+    "cargo": "GDG Organizer",
+    "empresa": "GDG Ado-Ekiti",
+    "tipo": "Staff"
+  },
+  {
+    "ciudad": "GDG Phoenix",
+    "nombre": "Sheldon",
+    "apellido": "McGee",
+    "cargo": "Community Lead",
+    "empresa": "GDG Phoenix",
+    "tipo": "Speaker"
+  },
+  {
+    "ciudad": "GDG El Alto",
+    "nombre": "Luis Fernando",
+    "apellido": "Callisaya",
+    "cargo": "Lead Organizer",
+    "empresa": "GDG El Alto",
+    "tipo": "General"
+  },
+  {
+    "ciudad": "GDG Delta University",
+    "nombre": "Mohamed",
+    "apellido": "Samy",
+    "cargo": "Team Manager",
+    "empresa": "Bitbang",
+    "tipo": "Attendee"
+  },
+  {
+    "ciudad": "GDG Lucknow",
+    "nombre": "Abhishek",
+    "apellido": "Sahu",
+    "cargo": "Community Organizer",
+    "empresa": "GDG Lucknow",
+    "tipo": "Speaker"
+  },
+  {
+    "ciudad": "GDG Abakaliki",
+    "nombre": "Victor",
+    "apellido": "Ekeghe Mba",
+    "cargo": "Community Organizer",
+    "empresa": "GDG Abakaliki",
+    "tipo": "Attendee"
+  },
+  {
+    "ciudad": "GDG London",
+    "nombre": "Florid",
+    "apellido": "Maclean",
+    "cargo": "GDG Organizer",
+    "empresa": "Catch The Event",
+    "tipo": "Speaker"
+  },
+  {
+    "ciudad": "GDG Tokyo",
+    "nombre": "Naoya",
+    "apellido": "Yoshimura",
+    "cargo": "GDG Organizer",
+    "empresa": "GDG Tokyo",
+    "tipo": "General"
+  },
+  {
+    "ciudad": "GDG São Paulo",
+    "nombre": "Fabí",
+    "apellido": "Canedo",
+    "cargo": "WTM Ambassador",
+    "empresa": "GDG São Paulo",
+    "tipo": "Staff"
+  },
+  {
+    "ciudad": "GDG Sydney",
+    "nombre": "Olayinka Peter",
+    "apellido": "Oluwafemi",
+    "cargo": "GDG Organizer",
+    "empresa": "GDG Sydney",
+    "tipo": "Attendee"
+  }
+]

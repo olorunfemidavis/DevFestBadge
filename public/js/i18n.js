@@ -165,6 +165,18 @@
     if (selectElem && selectElem.value !== currentLang) {
       selectElem.value = currentLang;
     }
+
+    var sampleLocales = ['en', 'es', 'fr', 'pt', 'yo', 'de', 'tr', 'sw'];
+    var langSubPath = sampleLocales.indexOf(currentLang) !== -1 ? (currentLang + '/') : '';
+
+    var csvLink = document.querySelector('a[data-i18n="sample_csv"]');
+    if (csvLink) csvLink.href = 'files/' + langSubPath + 'sample.csv';
+
+    var xlsxLink = document.querySelector('a[data-i18n="sample_xlsx"]');
+    if (xlsxLink) xlsxLink.href = 'files/' + langSubPath + 'sample.xlsx';
+
+    var jsonLink = document.querySelector('a[data-i18n="sample_json"]');
+    if (jsonLink) jsonLink.href = 'files/' + langSubPath + 'sample.json';
   }
 
   async function setLanguage(lang) {
